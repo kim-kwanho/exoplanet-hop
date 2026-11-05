@@ -1,7 +1,8 @@
 # 웹 시각화 확장 (교육용 인터랙티브 데모)
 
 주제 B 필수 제출물과 별개인 확장입니다. 과제 본편(외계행성 호스트 전체 카탈로그 분석)과 **데이터·결과를 섞어 쓰지 않습니다.**  
-상세 설계는 [interstellar-route-demo-plan.md](./interstellar-route-demo-plan.md)를 봅니다.
+상세 설계는 [interstellar-route-demo-plan.md](./interstellar-route-demo-plan.md)를 봅니다.  
+Cursor 리셋 후 구현 인수인계(스펙·카피·프롬프트): [prebuild-handoff.md](./prebuild-handoff.md)
 
 ## 한 문장
 
@@ -30,10 +31,10 @@ Dijkstra가 별을 확정하고 k-d 트리가 반경 X 이웃을 찾는 과정�
 
 ## 구현 순서
 
-1. PLAN §10 프롬프트 (1) 스캐폴딩
-2. 프롬프트 (2) 알고리즘 단계 시각화
+1. [prebuild-handoff.md](./prebuild-handoff.md)의 **프롬프트 1** 스캐폴딩
+2. **프롬프트 2** 알고리즘 단계 시각화 + 섹션 G 테스트
 3. MVP 완료 후 v1 subset
-4. 프롬프트 (3) 배포
+4. PLAN §10 프롬프트 (3) 배포
 
 ## 예정 폴더 (스캐폴딩 후)
 
