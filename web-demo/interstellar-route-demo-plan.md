@@ -2,6 +2,8 @@
 
 > 별 사이 최단시간 경로(Dijkstra + k-d 트리 반경 질의) 교육용 3D 웹 데모
 > 상태: 설계 확정(코드 미작성) · 알고리즘 과제(주제 B)와 별개의 확장 프로젝트
+> 최종 수정: 2026-11-05
+> 문서 위치: `web-demo/interstellar-route-demo-plan.md`
 
 ---
 
@@ -10,7 +12,7 @@
 | 항목 | 결정 |
 |---|---|
 | 데이터 범위 | **MVP = B(축소 가상 항성 세트, 3D 합성)** → **v1 = C(외계행성 호스트 subset)** |
-| 태양계(A) | 그래프 데모에서 제외. 인트로 "거리 단위 설명" 패널로만 사용 |
+| 태양계(A) | 그래프 데모에서 제외. 인트로 "거리 단위 설명" 패널로만 사용 (과제 개요의 "태양계 한정 웹"에서 의도적으로 벗어남 — 아래 참고) |
 | "실시간"의 의미 | 정적 좌표 + 클라이언트 계산. 실시간 = 알고리즘 단계 재생 (천체력 API 제외) |
 | 2D vs 3D | **처음부터 3D** (2D 단계 없음) |
 | 프레임워크 | Vite + React + TypeScript (+ Zustand) |
@@ -18,13 +20,21 @@
 | 계산 위치 | 프론트 전용. 데이터는 빌드 시 정적 JSON |
 | 배포 | Vercel 정적 배포 |
 | 모바일 | MVP 데스크톱 우선, v1에서 반응형 사용 가능 수준 |
-| 기착 정의 | 출발지 제외, 중간 경유마다 1년, 목적지 도착 후 없음 (과제 본편과 동일) |
+| 출발지 | **지구 고정(MVP)**. 임의 별 출발은 이번 범위 밖 |
+| 기착 비용 | **출발 호스트 기준** (과제 본편과 동일): `u`를 떠날 때 `u`가 지구가 아니면 기착 1년, 지구면 0. 목적지가 settle되면 탐색 종료(목적지 기착 없음) |
+| v1 subset 절단 | 지구 도달 가능 연결 성분 우선 + **과제 최단경로(HD 199509) + 경로 주변 이웃 보강** + 경로 assert + UI "데모 subset" 고지 |
+| 동률(tie) 처리 | 과제 본편에 명시된 타이브레이커가 없으면 **노드 id 오름차순**으로 재현성을 고정 |
+| 문서 위치 | 이 파일(`web-demo/interstellar-route-demo-plan.md`). `web-demo/README.md`는 확정 결정 요약 |
 
 **전제**
-- 간선 비용: `w(u→v) = 거리(ly) / 속도(c 배수) + (v가 목적지가 아니면 기착 1년)` — 도착 노드 기준이라 비음수이며 Dijkstra 조건을 만족합니다.
+- 간선 비용(과제 본편 정의, **출발 호스트 기준**): `w(u→v) = 거리(ly) / 속도(c 배수) + (u가 지구가 아니면 기착 1년, u가 지구면 0)` — 모든 비용이 비음수이므로 Dijkstra 조건을 만족합니다.
+- 중간 `best[v]`(코드상 `distYr[v]`)는 **"v에 도착한 시각"**입니다. v에서의 기착은 v를 떠날 때(v의 모든 나가는 간선에) 붙습니다. 목적지가 settle되면 탐색을 종료하므로 목적지에서의 기착은 붙지 않습니다.
 - 출발지는 지구(=태양, 원점 (0,0,0)). 1 AU ≈ 1.6e-5 ly라 무시합니다.
+- 과제 본편에서 HD 199509는 지구에서 약 79.274광년, X=15광년에서 도달 가능하며 최단시간 경로는 호스트 12곳·기착 11회·약 1,509.5325년입니다. 데모 subset 결과는 본편과 다를 수 있으므로 UI에 별도 표기합니다.
 - 데모 결과는 과제 본편 결과와 별개로 표기합니다.
 - AI(Claude/Cursor)는 구현·시각화·문구·배포 보조용이며, 경로를 추론하는 엔진이 아닙니다.
+
+**과제 개요(PDF §6)와의 관계**: 원래 구상은 "태양계 한정 웹"이었지만, 교육 효과(반경 X 질의와 경유 기착이 의미를 갖는 스케일) 때문에 **MVP = 합성 항성(B), v1 = 호스트 subset(C)**로 진행합니다. 태양계(A)는 그래프 데모가 아니라 인트로의 거리 단위 설명용입니다.
 
 ---
 
@@ -49,15 +59,16 @@
 - 사용자 계정, 저장, 백엔드
 - 태양계 데이터와 호스트 모형의 혼합
 - AI가 경로를 추론하는 기능
+- 임의 별 출발(지구 이외)
 
 ## 3. 정보구조와 첫 화면
 
 단일 페이지.
 
 - **헤더**: 제목 + 상시 배지 "교육용 단순화 모형" + About 버튼
-- **좌측 패널**: 데이터셋 선택, 출발/목적지, 파라미터 슬라이더(X, 속도, 기착), 초기화
+- **좌측 패널**: 데이터셋 선택, 출발(지구 고정 표시), 목적지, 파라미터 슬라이더(X, 속도, 기착), 초기화
 - **중앙 3D 캔버스**: 별(InstancedMesh), 현재 확정 별, 반경 X 구(반투명), 질의 이웃, 확정 경로 선, 시점 초기화 버튼
-- **우측 패널**: "이번 단계 설명" 한 문장 + 계산식(예: `8.4 ly ÷ 0.1c = 84년, +1년 기착`) + 우선순위 큐 상위 5개
+- **우측 패널**: "이번 단계 설명" 한 문장 + 계산식(예: `8.4 ly ÷ 0.1c = 84년` + `출발 별이 지구가 아니므로 기착 +1년`) + 우선순위 큐 상위 5개
 - **하단 컨트롤**: ⏮ ◀ ▶(다음 단계) ⏭, 자동재생 속도, 스크럽 바
 - **결과 카드**: 완료 시 경로 목록과 총 시간
 
@@ -78,16 +89,23 @@
 **모델**
 - **Body**: `id, name, pos[x,y,z] (ly), kind(earth | host | synthetic), datasetId`
 - **Dataset 메타**: `name, source, retrievedAt, citation, frame(ICRS 직교), unit(ly), isSynthetic`
-- **Jump(간선)**: 저장하지 않고 질의 시 계산. `from, to, distLy, travelYr, stopYr, costYr`
-- **SearchState**: `distYr: Map, prev: Map, settled: Set, pq 스냅샷, currentId, lastQuery{center, radius, hitIds}`
+- **Jump(간선)**: 저장하지 않고 질의 시 계산. `from, to, distLy, travelYr, stopYr, costYr` — `stopYr`는 **출발 호스트 `from` 기준**(from이 지구면 0, 아니면 기착 시간), `costYr = travelYr + stopYr`
+- **SearchState**: `distYr: Map(v에 도착한 시각, v의 기착 미포함), prev: Map, settled: Set, pq 스냅샷, currentId, lastQuery{center, radius, hitIds}`
 - **Path**: `nodeIds[], legs[], totalYr, hops`
-- **Scenario/Params**: `datasetId, startId, destId, X, speedC, stopYr`
+- **Scenario/Params**: `datasetId, startId(=earth), destId, X, speedC, stopYr`
 
 **출처 원칙**
 - 실데이터는 NASA Exoplanet Archive pscomppars에서 오프라인 스크립트(`scripts/`)로 변환합니다. 런타임 외부 호출은 없습니다.
 - 변환: `ra, dec, sy_dist(pc)` → ly(1 pc ≈ 3.26156 ly) → 직교좌표. 결측은 제외, hostname 기준 중복 제거. 컬럼명은 구현 시 재확인합니다.
 - 모든 데이터셋은 UI에 출처, 취득일, 합성 여부를 표기합니다.
 - 좌표는 항상 3차원 `[x,y,z]`. MVP 합성 데이터도 3D입니다.
+
+**v1 subset 절단 규칙 (200~500개)**
+- 지구에서 도달 가능한 연결 성분(프리셋 X 기준)을 우선 포함하고, 도달 불가능한 별만으로 채우지 않습니다.
+- 절단 방식은 **과제 최단경로(Earth → … → HD 199509) + 경로 주변 이웃 보강**입니다. 경로 주변에 편향될 수 있으므로 UI 고지를 유지합니다.
+- HD 199509 프리셋 경로가 끊기지 않도록 변환 스크립트에서 assert합니다.
+- 연결성 assert가 실패하면 빌드를 중단합니다.
+- UI에는 "데모 subset이라 과제 본편 결과와 다를 수 있음"을 유지합니다.
 
 ## 6. 단계 재생 상태머신
 
@@ -97,14 +115,15 @@
 |---|---|---|
 | `idle` | 시나리오 미선택 / 파라미터 편집 중 | - |
 | `ready` | 초기화 완료, 출발지 dist=0 | 초기 큐 |
-| `pop` | 큐에서 최소 누적시간 노드 선택 | nodeId, distYr |
-| `settle` | 해당 노드 확정(이후 불변) | nodeId |
+| `pop` | 큐에서 최소 도착 시각 노드 선택. 동률이면 노드 id 오름차순 | nodeId, distYr |
+| `settle` | 해당 노드 확정(이후 불변). 목적지면 탐색 종료 | nodeId |
 | `query` | k-d 반경 X 질의 | center, radius, hitIds, 방문 k-d 노드 수 |
-| `relax` | 이웃별 후보 시간 계산 후 갱신/무시 | to, candidateYr, updated |
+| `relax` | 이웃별 후보 도착 시각 = `distYr[u] + stop(u) + 거리/속도` 계산 후 갱신/무시. `stop(u)` = u가 지구면 0, 아니면 기착 | from, to, travelYr, stopYr, candidateYr, updated |
 | `done` | 목적지 확정, 경로 복원 | path |
 | `unreachable` | 큐 소진, 목적지 미도달 | settledCount |
 
-- 한 사이클: `pop → settle → query → relax*`. 목적지가 `settle`되면 `done`.
+- 한 사이클: `pop → settle → query → relax*`. 목적지가 `settle`되면 즉시 `done`(목적지 기착은 계산하지 않음).
+- 기착은 **settle된 노드 u를 떠날 때** u의 모든 나가는 간선에 동일하게 붙습니다. UI 계산식도 `distYr[u] + 기착(u) + 거리/속도`로 보여줍니다.
 - "한 단계" 버튼 = 한 사이클 묶음. "세부 보기" 토글로 하위 단계를 쪼개 봅니다.
 - 재생 컨트롤 상태(`paused / playing`)는 알고리즘 단계와 별도로 관리합니다.
 
@@ -132,19 +151,20 @@
 **완료 기준**
 - k-d 반경 질의가 브루트포스와 100% 일치
 - 이벤트 로그 Dijkstra가 전수 간선 Dijkstra와 일치
+- 소규모 손계산 예시로 출발 호스트 기준 기착 비용(지구 0, 그 외 1년, 목적지 기착 없음)이 일치
 - 프리셋 X에서 합성 그래프가 연결되고(assert), 끝까지 재생됨
 - X를 줄이면 `unreachable` 안내가 나옴
 - 라벨, 전환 애니메이션, k-d 분할 오버레이는 MVP에서 제외
 
 ### v1
-- [ ] 외계행성 호스트 subset(약 200~500개) 정적 JSON + 변환 스크립트
+- [ ] 외계행성 호스트 subset(약 200~500개) 정적 JSON + 변환 스크립트 (§5 절단 규칙 적용)
 - [ ] 목적지 검색, HD 199509 프리셋
 - [ ] 세부 보기 토글, 자동재생 속도
 - [ ] what-if 경로 비교 오버레이, URL 쿼리로 시나리오 공유
 - [ ] 모바일 반응형(패널 → 바텀시트)
 
 **완료 기준**
-- 변환 스크립트가 "프리셋 목적지가 출발지에서 도달 가능"을 assert로 검증
+- 변환 스크립트가 "HD 199509 프리셋 경로가 끊기지 않음 + 지구에서 도달 가능한 연결 성분 우선 포함"을 assert로 검증
 - 모바일(약 390px)에서 ▶ 재생과 결과 확인 가능
 
 ### Polish
@@ -173,8 +193,9 @@
 - **좌표계**: ICRS 적도좌표 기준 직교 변환. 은하좌표와 혼동하지 않습니다.
 - **단위**: pc↔ly, 거리/속도 → 년 계산을 `core/units` 한 곳에서만 합니다. UI 표기 단위와 계산 단위를 분리합니다.
 - **경계값**: `거리 ≤ X` 포함 여부와 부동소수점 오차(과제 본편 정의와 맞출 것). 쌍성 등 거리 0 별도 처리.
-- **Dijkstra 구현**: lazy deletion 시 큐에 낡은 항목이 남으므로, 스냅샷에는 최신 항목만 보여줍니다.
-- **subset 왜곡**: subset을 자르면 연결성과 최단 경로가 본편과 달라집니다. UI에 "데모 subset, 과제 결과와 다름" 명시.
+- **Dijkstra 구현**: lazy deletion 시 큐에 낡은 항목이 남으므로, 스냅샷에는 최신 항목만 보여줍니다. 동률은 노드 id 오름차순.
+- **subset 왜곡**: subset을 자르면 연결성과 최단 경로가 본편과 달라집니다. §5 절단 규칙(연결 성분 우선, 경로+이웃 보강, HD 199509 경로 assert)을 지키고 UI에 "데모 subset, 과제 결과와 다름"을 명시합니다.
+- **기착 비용 혼동**: 도착 노드 기준(`v가 목적지가 아니면 +1년`)으로 구현하면 최종 총합은 같아질 수 있어도 중간 레이블(`distYr`)과 UI 계산식이 과제 PDF 예시와 어긋납니다. 항상 **출발 호스트 기준**으로 구현합니다.
 - **성능**: 수백 개는 문제없음. 전체 N≈4819는 이벤트 로그가 커지므로 Web Worker가 필요하며 이번 범위 밖.
 - **과제 모형과 혼동**: 데이터셋 배지(합성/실데이터), 고지 문구, 과제 결과와의 구분 문구를 넣고 태양계 데이터는 섞지 않습니다.
 - **실시간 오해**: About에 "정적 좌표 기반"임을 명시합니다.
@@ -184,10 +205,12 @@
 ### (1) 프로젝트 스캐폴딩
 ```
 Vite + React + TypeScript 프로젝트를 만들어줘. 코드는 최소한으로, 요청한 것만.
+작업 위치: exoplanet-hop/web-demo/
 구조: src/core(순수 TS: units, kdtree, dijkstra 이벤트 생성), src/data(정적 JSON),
 src/ui(패널/캔버스/컨트롤), src/store(Zustand).
 요구: Vitest 설정, core는 React 의존 금지, 좌표는 항상 [x,y,z] (ly).
 시각화: @react-three/fiber + @react-three/drei(OrbitControls)로 3D 캔버스를 기본으로 설정.
+출발지는 지구 고정. 기착은 출발 호스트 기준(지구 0, 그 외 1년, 목적지 settle 시 종료).
 먼저 만들 것:
  (a) units: pc→ly, 거리/속도→년
  (b) 합성 3D 데이터셋 생성기(시드 고정, 80~150개, 프리셋 X에서 연결 그래프 보장 assert)
@@ -195,17 +218,20 @@ src/ui(패널/캔버스/컨트롤), src/store(Zustand).
      중앙은 R3F <Canvas>, 별은 InstancedMesh, 시점 초기화 버튼 포함
 애매한 점이 있으면 구현 전에 질문하고, 가정은 명시해줘.
 완료 기준: dev 서버 실행, 단위 변환 테스트 통과, 3D 캔버스에 별이 렌더링됨.
+설계 문서는 web-demo/interstellar-route-demo-plan.md 와 web-demo/README.md 를 따른다.
 ```
 
 ### (2) 알고리즘 단계 시각화
 ```
 src/core에 3차원 k-d 트리(축 순환 x→y→z, 반경 질의, 방문 노드 수 반환)와,
 이벤트 로그를 만드는 Dijkstra를 구현해줘.
-비용: 거리(ly)/속도(c) 년 + 목적지가 아닌 도착 노드마다 기착 1년(출발지 기착 없음, 목적지 도착 후 없음).
+비용(과제 본편 정의, 출발 호스트 기준): w(u→v) = 거리(ly)/속도(c) + (u가 지구가 아니면 기착 1년, 지구면 0).
+dist[v]는 'v에 도착한 시각'이고, v의 기착은 v를 떠날 때 붙는다. 목적지가 settle되면 탐색을 종료한다(목적지 기착 없음).
+동률(pop)은 노드 id 오름차순.
 이벤트: ready, pop, settle, query, relax, done, unreachable
  (payload: pop{nodeId, distYr}, query{center, radius, hitIds, visitedKdNodes},
-  relax{to, candidateYr, updated}, done{path}, unreachable{settledCount}).
-테스트: (1) k-d 반경 질의 == 브루트포스 (2) 이벤트 로그 Dijkstra == 전수 간선 Dijkstra.
+  relax{from, to, travelYr, stopYr, candidateYr, updated}, done{path}, unreachable{settledCount}).
+테스트: (1) k-d 반경 질의 == 브루트포스 (2) 이벤트 로그 Dijkstra == 전수 간선 Dijkstra (3) 손계산 소규모 그래프에서 출발 호스트 기준 기착 비용 일치.
 그 다음 UI:
  - 이벤트 인덱스 기반 재생(◀ ▶ 스크럽, 자동재생), "한 단계" = pop~relax 묶음, 세부 보기 토글
  - query 단계: 현재 확정 별 중심의 반투명 구(반경 X) + 이웃 하이라이트 + 중심↔이웃 선
@@ -228,7 +254,8 @@ README에 데이터 출처(NASA Exoplanet Archive, 취득일)와 "교육용 단�
 ---
 
 ## 11. 다음 액션
+
 1. 프롬프트 (1)로 스캐폴딩 → 단위 변환 테스트와 3D 별 렌더링 확인
 2. 프롬프트 (2)로 core와 단계 시각화 → 브루트포스 일치 테스트 통과 확인
-3. MVP 완료 기준 충족 후 v1(데이터셋 C) 진행
+3. MVP 완료 기준 충족 후 v1(데이터셋 C, 경로+이웃 보강 subset) 진행
 4. 프롬프트 (3)은 MVP 완성 후 한 번, v1 완성 후 한 번 사용
