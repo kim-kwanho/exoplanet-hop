@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# 스크립트가 다시 만드는 산출물
+data/processed/*
+!data/processed/.gitkeep
+
+# 웹 데모 (나중에 node/bundler 쓰면)
+node_modules/
+dist/
+build/
+.cache/
+*.local
+
+# OS / 편집기
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*~
+
+# 환경·비밀
+.env
+.env.*
+!.env.example
+
+# 임시·잠금 파일
+~$*
+*.tmp
+*.bak
+*.log
+
+# 로컬 PDF 초안 (제출본을 올릴 때만 예외로 add)
+report/*.pdf
+*.hwpx
+*.hwp
