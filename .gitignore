@@ -54,8 +54,10 @@ report/*.pdf
 *.hwpx
 *.hwp
 
-# AI 도구가 내보낸 임시/원본 이미지 (보고서용 확정 다이어그램은 추적)
+# AI 도구가 내보낸 임시/원본 이미지 (확정 다이어그램은 report/diagrams/ 추적)
+report/_scratch/
 report/Gemini_Generated_*
+report/**/Gemini_Generated_*
 report/*_generated_*
 *.psd
 *.ai
