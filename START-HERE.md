@@ -33,4 +33,4 @@
 | 원본 스냅샷 | `data/raw/pscomppars_2026-11-05.csv` |
 | 웹 데모 plan | `web-demo/interstellar-route-demo-plan.md` |
 
-남은 일: 보고서 6장(웹)·최종 PDF 편집, `web-demo` MVP 구현.
+남은 일: 최종 PDF 편집, `web-demo` MVP 구현 후 §6 배포 URL 채우기.
