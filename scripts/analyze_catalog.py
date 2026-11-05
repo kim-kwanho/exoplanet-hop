@@ -163,6 +163,34 @@ def summarize(hosts: list[dict], counts: dict) -> dict:
             cursor = previous[cursor]
         farthest_route.reverse()
 
+    route_legs = []
+    route_distance = 0.0
+    route_stopovers = 0
+    if farthest_route:
+        first = farthest_route[0]
+        distance = hosts[first]["distance_earth_ly"]
+        route_distance += distance
+        route_legs.append({
+            "from": "Earth",
+            "to": hosts[first]["hostname"],
+            "distance_ly": distance,
+            "cruise_time_years": distance / CRUISE_SPEED_C,
+            "stopover_at_departure_years": 0.0,
+        })
+        for u, v in zip(farthest_route, farthest_route[1:]):
+            a, b = hosts[u], hosts[v]
+            dx, dy, dz = a["x_ly"] - b["x_ly"], a["y_ly"] - b["y_ly"], a["z_ly"] - b["z_ly"]
+            distance = math.sqrt(dx * dx + dy * dy + dz * dz)
+            route_distance += distance
+            route_stopovers += 1
+            route_legs.append({
+                "from": a["hostname"],
+                "to": b["hostname"],
+                "distance_ly": distance,
+                "cruise_time_years": distance / CRUISE_SPEED_C,
+                "stopover_at_departure_years": STOP_YEARS,
+            })
+
     minimum_star_distance = min((s["distance_earth_ly"] for s in hosts), default=None)
     pairs_upper = len(hosts) * (len(hosts) - 1) // 2
     return {
@@ -174,6 +202,7 @@ def summarize(hosts: list[dict], counts: dict) -> dict:
         "pc_to_ly": PC_TO_LY,
         "host_pair_distance_checks_upper_bound": pairs_upper,
         "feasible_host_host_edges": len(edges),
+        "feasible_edges_inside_earth_component": sum(1 for i, j, _ in edges if i in seen and j in seen),
         "earth_initial_neighbors": len(earth_neighbors),
         "earth_initial_neighbor_names": [hosts[i]["hostname"] for i in earth_neighbors],
         "reachable_host_count_from_earth": len(seen),
@@ -183,6 +212,10 @@ def summarize(hosts: list[dict], counts: dict) -> dict:
         "farthest_reachable_shortest_time_years": distances[farthest_idx] if farthest_idx is not None else None,
         "farthest_reachable_shortest_route": [hosts[i]["hostname"] for i in farthest_route],
         "farthest_reachable_shortest_route_host_stopovers": max(0, len(farthest_route) - 1),
+        "farthest_reachable_shortest_route_total_distance_ly": route_distance,
+        "farthest_reachable_shortest_route_cruise_time_years": route_distance / CRUISE_SPEED_C if farthest_route else None,
+        "farthest_reachable_shortest_route_stopover_years": route_stopovers * STOP_YEARS,
+        "farthest_reachable_shortest_route_legs": route_legs,
         "closest_valid_host": hosts[min(range(len(hosts)), key=lambda i: hosts[i]["distance_earth_ly"])] ["hostname"] if hosts else None,
         "closest_valid_host_distance_ly": minimum_star_distance,
         "unreachable_destination_policy": "Do not report a shortest path if the chosen target is outside the Earth-reachable component.",
@@ -211,6 +244,11 @@ def main() -> None:
     } for i, j, distance in edges]
     write_csv(OUT / "feasible_edges_x15ly.csv", edge_rows, ["host_a", "host_b", "distance_ly", "cruise_time_years"])
     (OUT / "summary_x15ly.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    route_rows = summary["farthest_reachable_shortest_route_legs"]
+    if route_rows:
+        write_csv(OUT / "farthest_reachable_route.csv", route_rows, [
+            "from", "to", "distance_ly", "cruise_time_years", "stopover_at_departure_years"
+        ])
     print(json.dumps(summary, ensure_ascii=False, indent=2))
 
 
