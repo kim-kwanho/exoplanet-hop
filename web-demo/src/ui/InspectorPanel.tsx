@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useLayoutEffect, useMemo, useRef } from 'react'
 import { suggestRadius } from '../core/dijkstraSimulator'
 import { useSimulationStore, useView } from '../store/useSimulationStore'
 
@@ -84,17 +84,49 @@ export function InspectorPanel() {
         </div>
       )}
       <h4>우선순위 큐</h4>
-      <ul className="pq">
-        {view.pq.slice(0, 5).map((row) => (
-          <li key={row.id}>
-            <span>{nameOf(row.id)}</span>
-            <b>{fmt(row.distYr)}년</b>
-          </li>
-        ))}
-        {view.pq.length === 0 && <li className="muted">비어 있음</li>}
-      </ul>
+      <PriorityQueue rows={view.pq} leavingId={e.type === 'pop' ? e.nodeId : null} />
       <p className="note">다음 확정 별은 가장 가까운 별이 아닐 수 있어요.</p>
     </aside>
+  )
+}
+
+function PriorityQueue({ rows, leavingId }: { rows: { id: string; distYr: number }[]; leavingId: string | null }) {
+  const lane = useRef<HTMLDivElement>(null)
+  const prev = useRef(new Map<string, number>())
+  const shown = rows.slice(0, 6)
+  const sig = shown.map((row) => `${row.id}:${row.distYr}`).join('|')
+
+  useLayoutEffect(() => {
+    const root = lane.current
+    if (!root) return
+    const next = new Map<string, number>()
+    for (const el of root.querySelectorAll<HTMLElement>('[data-qid]')) {
+      const id = el.dataset.qid!
+      const top = el.getBoundingClientRect().top
+      next.set(id, top)
+      const old = prev.current.get(id)
+      if (old !== undefined && Math.abs(old - top) > 1 && id !== leavingId) {
+        el.animate([{ transform: `translateY(${old - top}px)` }, { transform: 'translateY(0)' }], {
+          duration: 420,
+          easing: 'cubic-bezier(.2,.7,.2,1)',
+        })
+      }
+    }
+    prev.current = next
+  }, [sig, leavingId])
+
+  return (
+    <div className="queue" ref={lane}>
+      <div className="queue-mouth" aria-hidden="true" />
+      {shown.map((row, i) => (
+        <div key={row.id} data-qid={row.id} className={`q-card${i === 0 ? ' front' : ''}${leavingId === row.id ? ' leaving' : ''}`}>
+          <span>{nameOf(row.id)}</span>
+          <b>{fmt(row.distYr)}년</b>
+        </div>
+      ))}
+      {shown.length === 0 && <div className="q-empty">비어 있음</div>}
+      {rows.length > shown.length && <div className="q-more">외 {rows.length - shown.length}</div>}
+    </div>
   )
 }
 

@@ -9,13 +9,9 @@ export function IconRail() {
   const showGrid = useSimulationStore((s) => s.showGrid)
   const showLabels = useSimulationStore((s) => s.showLabels)
   const setLayer = useSimulationStore((s) => s.setLayer)
-  const toggleAbout = useSimulationStore((s) => s.toggleAbout)
 
   return (
     <div className="rail">
-      <button type="button" className="icon" onClick={toggleAbout} aria-label="정보">
-        i
-      </button>
       <button type="button" className="icon" onClick={toggleLayers} aria-label="레이어">
         ▤
       </button>

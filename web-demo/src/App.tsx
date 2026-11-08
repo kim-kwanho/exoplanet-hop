@@ -42,10 +42,7 @@ export function App() {
       <IconRail />
       <PlaybackControls />
       <footer className="foot">
-        데이터: {meta.isSynthetic ? `샌드박스(시드 ${meta.seed})` : `${meta.source} · ${meta.retrievedAt}`} ·{' '}
-        <button type="button" className="link" onClick={() => useSimulationStore.getState().toggleAbout()}>
-          정보
-        </button>
+        데이터: {meta.isSynthetic ? `샌드박스(시드 ${meta.seed})` : `${meta.source} · ${meta.retrievedAt}`}
       </footer>
       <AboutModal />
     </div>
