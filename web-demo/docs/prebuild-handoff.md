@@ -1,9 +1,10 @@
-# 성간 도약 경로 탐색 교육용 3D 웹 데모 사전 설계서 (수정본)
+# EXOPLANET HOP — 성간 도약 경로 3D 웹 앱 사전 설계서 (수정본)
 
-> Cursor 리셋 후 구현용 인수인계 문서. plan과 함께 본다: `interstellar-route-demo-plan.md`  
-> 최종 정리: 2026-11-05 (Gemini 초안 → 피드백 반영)
+> Cursor 리셋 후 구현용 인수인계 문서. plan과 함께 본다: `docs/interstellar-route-demo-plan.md`  
+> 목업 1페이지: `docs/web-demo-mockup-spec-1page.pdf` · 이미지: `docs/mockups/v3/`  
+> 최종 정리: 2026-11-08 (Gemini 초안 → 피드백 반영 → 3D 모션 스펙 추가)
 
-### 변경 요약 (핵심 6개)
+### 변경 요약 (핵심)
 
 - 기본 항행 속도 `speedC = 0.1` (비행시간 = 거리 / 0.1). UI 시연 배속은 별개.
 - 스키마: Body / metadata / scenario 필수 필드 규격화. `spectral_type` 등은 선택.
@@ -11,6 +12,7 @@
 - v1: HD 199509 경로 + 주변 이웃 보강, 약 200~500개. “태양계 인근 100개” 삭제.
 - Anti-pattern은 `금지:` 표기.
 - Cursor 프롬프트: Tailwind 선택, `src/core|data|ui|store`, MVP `X=8` vs 본편 `X=15` 고지.
+- **3D 모션**: NASA Eyes식 카메라·레이어 UX / Sketchfab식은 인트로만. 그래프 본체=점·반경 구·경로 선.
 
 ---
 
@@ -172,11 +174,11 @@
 
 ### 상시 배지
 
-`[교육용 데모]` 정적 3D 단순화 모델(기본 0.1c, X=8 ly). 과제 본편(전체 탐색, 기본 X=15 ly)과 결과가 다를 수 있습니다.
+데이터 필만 표기: `합성 항성 100 · 0.1c · X 8 ly` (파라미터에 따라 갱신).
 
-### About (요약)
+### About / 푸터 (요약)
 
-교육용 k-d + Dijkstra 단계 재생. 정적 좌표. 기본 0.1c, 중간 기착 1년. 지구는 트리 제외·원점 첫 질의. 합성/subset은 본편과 다를 수 있음. AI는 경로를 추론하지 않음.
+k-d + Dijkstra 단계 재생. 정적 좌표. 기본 0.1c, 중간 기착 1년. 지구는 트리 제외·원점 첫 질의. 출처·시드·합성 여부를 푸터/About에만 표기. AI는 경로를 추론하지 않음.
 
 ### 단계 템플릿
 
@@ -188,7 +190,9 @@
 
 ---
 
-## D. 3D 가독성
+## D. 3D 가독성 · 모션
+
+### D-1. 색·상태
 
 | 상태 | 색 | 비고 |
 |---|---|---|
@@ -202,11 +206,31 @@
 | 최종 경로 | `#FFEA00` | |
 | 반경 구 | cyan wire, α0.08 | 현재 u 중심만 |
 
+### D-2. 3D 모션 스펙 (MVP)
+
+참고 UX만 차용한다. **궤도 역학·천체력 시뮬은 하지 않는다.**
+
+| 참고 | 차용 | 비차용 |
+|---|---|---|
+| NASA Eyes | 부드러운 카메라, 현재 대상 명확, 정보 레이어 on/off | 실시간 궤도, 지형·미션 타임라인 |
+| Sketchfab 태양계 | 과장 스케일·가벼운 모델(인트로/단위 설명) | 탐색 화면과 동일 모드로 혼합 |
+
+**모션 규칙**
+
+1. **기본 카메라**: `OrbitControls` 자유 회전/줌 + **시점 초기화** 버튼 필수.
+2. **단계 추적**: `pop` / `settle` / `query`에서 현재 별이 화면 밖이면 **lerp로만** 추적. 매 스텝 텔레포트 금지. 사용자가 드래그/줌하면 추적 중단.
+3. **query**: 반경 구 fade-in → 이웃 pulse(크기/밝기) → (선택) 중심↔이웃 짧은 선.
+4. **relax**: 완화 간선을 잠깐 표시 후 사라짐(갱신된 간선만 강조).
+5. **done**: 최종 경로를 한 번에 전부 그리지 말고 **경로 순서로 순차 연결**(금색 `#FFEA00`).
+6. **인트로(선택)**: Sketchfab식 미니 태양계는 **거리 단위 설명 패널/첫 진입용**만. 그래프 탐색 캔버스와 **모드 분리**.
+7. **그래프 본체**: 항성=점(InstancedMesh), 반경=반투명 구 1개, 경로=선. Eyes급 텍스처·성운·그림자맵 없음.
+
 금지:
 
 - 모든 별 라벨 상시 표시
 - k-d 분할면 전역 오버레이
 - 무거운 포스트프로세싱/그림자맵
+- 실시간 궤도·천체력·전 태양계 물리 시뮬
 
 ---
 
@@ -220,8 +244,8 @@
 2. synthetic JSON + earth 제외 + X=8 백본 assert
 3. `units` / `kdtree` / `dijkstraSimulator` (0.1c, 기착, id 동률, 이벤트 로그)
 4. Zustand 파라미터·재생 헤드
-5. 3D: 반경 구·하이라이트·경로 선
-6. UI: 배지, About, 재생 바, 인스펙터
+5. 3D: 반경 구·하이라이트·경로 선 + §D-2 모션(lerp·fade·pulse·순차 경로)
+6. UI: 배지, About, 재생 바, 인스펙터, 시점 초기화
 7. 통과: 스텝 동기화, 0.1c·기착, earth 미삽입, unreachable, `npm run build`
 
 나중에: v1 subset 200~500, Polish
@@ -252,10 +276,10 @@
 ```markdown
 작업 위치: `exoplanet-hop/web-demo/`
 
-당신은 교육용 3D 성간 경로 시각화 웹 데모의 프론트엔드 스캐폴딩 엔지니어입니다.
+당신은 EXOPLANET HOP(성간 도약 경로 3D 웹 앱)의 프론트엔드 스캐폴딩 엔지니어입니다.
 아래 사양과 확정 제약에 따라 Vite + React + TypeScript + Zustand + Three.js(@react-three/fiber, @react-three/drei) 기반 프로젝트를 구축하세요. (스타일링은 일반 CSS/CSS Modules 또는 Tailwind 중 선택 적용)
 
-설계 문서: `web-demo/interstellar-route-demo-plan.md`, `web-demo/prebuild-handoff.md`를 따른다.
+설계 문서: `web-demo/docs/interstellar-route-demo-plan.md`, `web-demo/docs/prebuild-handoff.md`를 따른다.
 
 [확정 제약 및 디렉터리 구조]
 1. 정적 배포(Vercel 정적 호스팅)를 위한 번들 구조를 구성하세요.
@@ -276,14 +300,16 @@
 2. `src/ui/canvas/SpaceCanvas.tsx`:
    - `@react-three/fiber`의 `<Canvas>` 및 `OrbitControls` 설정.
    - 배경 우주 환경 및 항성 구체 렌더링. 지구(`#00E5FF`)와 목적지(`#FF1744`) 시각 구별.
+   - **시점 초기화** 버튼. 카메라 텔레포트 없이 부드러운 기본 시점 복귀.
+   - 그래프 본체는 점·구·선만 (궤도 역학·성운·그림자맵 금지). `docs/prebuild-handoff.md` §D-2 준수.
 3. `src/ui/TopBar.tsx` & `src/ui/AboutModal.tsx`:
-   - "교육용 데모: 정적 좌표 기반(기본 0.1c, X=8ly)이며 과제 본편(기본 X=15ly)과 다를 수 있음" 상시 뱃지 및 About 모달 팝업.
+   - 상시 배지는 데이터 필만: `합성 항성 N · 0.1c · X N ly`. About/푸터에 출처·시드·정적 좌표 안내.
 4. `src/store/useSimulationStore.ts`:
    - 시뮬레이션 상태(`ready`, `running`, `paused`, `done`, `unreachable`), 파라미터(X = 8.0 ly, speedC = 0.1, stopYr = 1.0) 인터페이스 정의.
 
 [완료 기준]
 - `npm run dev` 실행 시 에러 없이 3D 우주 공간에 항성군이 표시되고 마우스 드래그로 회전/줌이 가능해야 함.
-- 상시 고지 배지와 About 모달이 정상 렌더링되어야 함.
+- 시점 초기화 버튼과 데이터 필 배지·About/푸터가 정상 렌더링되어야 함.
 애매하면 구현 전 질문하고 가정을 명시해라.
 ```
 
@@ -294,7 +320,7 @@
 
 당신은 k-d 트리 및 다익스트라(Dijkstra) 알고리즘 시각화 전문 엔지니어입니다.
 스캐폴딩된 프로젝트 위에 단계별 시뮬레이션 엔진과 3D 반응형 시각화 로직을 구현하세요.
-설계 문서: `web-demo/interstellar-route-demo-plan.md`, `web-demo/prebuild-handoff.md`를 따른다.
+설계 문서: `web-demo/docs/interstellar-route-demo-plan.md`, `web-demo/docs/prebuild-handoff.md`를 따른다.
 
 [핵심 알고리즘 제약]
 1. 지구는 가상 출발점입니다:
@@ -314,15 +340,19 @@
    - 각 이벤트에 UI 수식 breakdown 데이터(layover, flight_time, old_dist, new_dist) 포함.
 3. `src/ui/PlaybackControls.tsx`:
    - 이전/다음 단계, 재생/일시정지, 처음으로, 시연 속도 배속 슬라이더, 도약 반경 X 슬라이더 구현.
-4. `src/ui/canvas/GraphVisualizer.tsx`:
+4. `src/ui/canvas/GraphVisualizer.tsx` (+ 카메라 헬퍼):
    - 현재 단계에 따른 노드 색상(미방문/큐대기/확정/이웃), 반경 구체(X), 완화 간선, 최단 경로 네온 라인 렌더링.
    - k-d 트리 분할면은 절대 렌더링하지 말고, 현재 활성 노드 중심의 반경 구체 1개만 표시.
+   - **§D-2 모션**: pop/settle/query 시 현재 별이 화면 밖이면 lerp 추적(사용자 조작 시 중단, 텔레포트 금지).
+   - query: 구 fade-in → 이웃 pulse. relax: 완화 간선 잠깐 표시. done: 최종 경로 순차 연결(`#FFEA00`).
+   - 미니 태양계/궤도 시뮬은 넣지 말 것(인트로는 별도 모드일 때만, 이번 프롬프트 범위 밖이면 생략).
 5. `src/ui/InspectorPanel.tsx`:
    - 단계별 한 줄 설명, 실시간 계산식("dist[u] + 기착(u) + 거리/0.1"), 우선순위 큐 현황 테이블.
    - "다음 별 = 현재 이웃 중 최근점이 아님" 안내 문구 상시 노출.
 
 [완료 기준]
 - Step Next 클릭 시 노드 상태, 반경 구, 계산 수식이 1:1로 일치하여 변경되어야 함.
+- 단계 전환 시 카메라가 lerp로만 따라가고, 시점 초기화가 동작해야 함.
 - X를 3.0 ly 이하로 줄이고 재생 시 unreachable 상태 및 전용 안내문이 표출되어야 함.
 - 테스트: (1) k-d == 브루트포스 (2) 이벤트 Dijkstra == 전수 간선 Dijkstra (3) 손계산 S0-S1-S2에서 30년/61년 (4) X 축소 시 unreachable
   이 `npm run test`로 통과해야 함.

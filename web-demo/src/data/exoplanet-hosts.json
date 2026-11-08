@@ -1,0 +1,4547 @@
+{
+  "metadata": {
+    "name": "외계행성 호스트",
+    "source": "NASA Exoplanet Archive pscomppars",
+    "sourceUrl": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=SELECT%20hostname%2C%20pl_name%2C%20ra%2C%20dec%2C%20sy_dist%2C%20sy_disterr1%2C%20sy_disterr2%20FROM%20pscomppars&format=csv",
+    "retrievedAt": "2026-11-05",
+    "citation": "NASA Exoplanet Archive, Planetary Systems Composite Parameters",
+    "frame": "icrs",
+    "unit": "ly",
+    "isSynthetic": false,
+    "starCount": 300,
+    "bounds": {
+      "min": [
+        -91.078761,
+        -68.079461,
+        -120.225318
+      ],
+      "max": [
+        83.699316,
+        80.817622,
+        73.257185
+      ]
+    },
+    "subsetRule": "X=15 ly 지구 도달 성분 132개 전체와, 성분에 가장 가까운 호스트를 이름 순으로 채워 300개."
+  },
+  "scenario": {
+    "datasetId": "pscomppars-2026-11-05",
+    "startId": "earth_sol",
+    "destId": "HD 199509",
+    "X": 15,
+    "speedC": 0.1,
+    "stopYr": 1
+  },
+  "bodies": [
+    {
+      "id": "earth_sol",
+      "name": "지구",
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "kind": "earth",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "14 Her",
+      "name": "14 Her",
+      "pos": [
+        -19.420103,
+        -37.46854,
+        40.493667
+      ],
+      "ra": 242.6021014,
+      "dec": 43.8163621,
+      "syDistPc": 17.9323,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "16 Cyg B",
+      "name": "16 Cyg B",
+      "pos": [
+        18.850306,
+        -39.581554,
+        53.215218
+      ],
+      "ra": 295.4656422,
+      "dec": 50.5168243,
+      "syDistPc": 21.1397,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "2MASS J21252752-8138278",
+      "name": "2MASS J21252752-8138278",
+      "pos": [
+        12.635062,
+        -10.098611,
+        -110.087632
+      ],
+      "ra": 321.3662989,
+      "dec": -81.6414894,
+      "syDistPc": 34.1154,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "47 UMa",
+      "name": "47 UMa",
+      "pos": [
+        -33.064643,
+        8.943346,
+        29.182862
+      ],
+      "ra": 164.8647611,
+      "dec": 40.4304931,
+      "syDistPc": 13.7967,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "51 Peg",
+      "name": "51 Peg",
+      "pos": [
+        45.407235,
+        -12.705662,
+        17.882026
+      ],
+      "ra": 344.3675399,
+      "dec": 20.7690958,
+      "syDistPc": 15.4614,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "55 Cnc",
+      "name": "55 Cnc",
+      "pos": [
+        -24.70965,
+        26.36208,
+        19.479373
+      ],
+      "ra": 133.1468373,
+      "dec": 28.3298154,
+      "syDistPc": 12.5855,
+      "planetCount": 5,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "55 Cnc B",
+      "name": "55 Cnc B",
+      "pos": [
+        -24.510176,
+        26.13,
+        19.30282
+      ],
+      "ra": 133.167908,
+      "dec": 28.3152863,
+      "syDistPc": 12.4773,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "61 Vir",
+      "name": "61 Vir",
+      "pos": [
+        -24.804054,
+        -8.830597,
+        -8.715554
+      ],
+      "ra": 199.596455,
+      "dec": -18.3157745,
+      "syDistPc": 8.50332,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "7 CMa",
+      "name": "7 CMa",
+      "pos": [
+        -9.7221,
+        60.217323,
+        -21.308521
+      ],
+      "ra": 99.171276,
+      "dec": -19.2561808,
+      "syDistPc": 19.8101,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "70 Vir",
+      "name": "70 Vir",
+      "pos": [
+        -52.537308,
+        -21.340121,
+        13.903468
+      ],
+      "ra": 202.1064898,
+      "dec": 13.7763085,
+      "syDistPc": 17.9011,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "AU Mic",
+      "name": "AU Mic",
+      "pos": [
+        17.871041,
+        -20.348527,
+        -16.49363
+      ],
+      "ra": 311.2911369,
+      "dec": -31.34245,
+      "syDistPc": 9.7221,
+      "planetCount": 4,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "BD-06 1339",
+      "name": "BD-06 1339",
+      "pos": [
+        2.006508,
+        65.717925,
+        -6.906202
+      ],
+      "ra": 88.2511811,
+      "dec": -5.9963378,
+      "syDistPc": 20.2695,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "BD-210397",
+      "name": "BD-210397",
+      "pos": [
+        60.316978,
+        39.624496,
+        -27.986687
+      ],
+      "ra": 33.3024198,
+      "dec": -21.1962147,
+      "syDistPc": 23.7324,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Barnard's star",
+      "name": "Barnard's star",
+      "pos": [
+        -0.057134,
+        -5.936777,
+        0.492077
+      ],
+      "ra": 269.4486144,
+      "dec": 4.7379808,
+      "syDistPc": 1.82655,
+      "planetCount": 4,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "CD Cet",
+      "name": "CD Cet",
+      "pos": [
+        18.590702,
+        20.904659,
+        2.336954
+      ],
+      "ra": 48.3530155,
+      "dec": 4.7751881,
+      "syDistPc": 8.60715,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "CFBDSIR J145829+101343",
+      "name": "CFBDSIR J145829+101343",
+      "pos": [
+        -52.774035,
+        -52.080131,
+        13.378967
+      ],
+      "ra": 224.6208333,
+      "dec": 10.2286111,
+      "syDistPc": 23.1,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "COCONUTS-2 A",
+      "name": "COCONUTS-2 A",
+      "pos": [
+        -3.745759,
+        7.256991,
+        -34.554743
+      ],
+      "ra": 117.300914,
+      "dec": -76.702696,
+      "syDistPc": 10.8864,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "CWISEP J193518.59-154620.3",
+      "name": "CWISEP J193518.59-154620.3",
+      "pos": [
+        18.296458,
+        -41.432268,
+        -12.793017
+      ],
+      "ra": 293.8262172,
+      "dec": -15.7725727,
+      "syDistPc": 14.43,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "DE CVn",
+      "name": "DE CVn",
+      "pos": [
+        -64.76962,
+        -25.802098,
+        71.060296
+      ],
+      "ra": 201.7207198,
+      "dec": 45.5455449,
+      "syDistPc": 30.5225,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "DENIS-P J082303.1-491201",
+      "name": "DENIS-P J082303.1-491201",
+      "pos": [
+        -25.868905,
+        35.91822,
+        -51.281106
+      ],
+      "ra": 125.7620668,
+      "dec": -49.2003008,
+      "syDistPc": 20.77,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "DMPP-4",
+      "name": "DMPP-4",
+      "pos": [
+        20.693158,
+        -47.403857,
+        64.413596
+      ],
+      "ra": 293.5826648,
+      "dec": 51.2358069,
+      "syDistPc": 25.3284,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "G 192-15",
+      "name": "G 192-15",
+      "pos": [
+        -0.217574,
+        20.038109,
+        23.765362
+      ],
+      "ra": 90.6220931,
+      "dec": 49.861939,
+      "syDistPc": 9.53114,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "G 196-3",
+      "name": "G 196-3",
+      "pos": [
+        -39.669099,
+        21.908931,
+        54.752058
+      ],
+      "ra": 151.0884754,
+      "dec": 50.3861806,
+      "syDistPc": 21.7912,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "G 261-6",
+      "name": "G 261-6",
+      "pos": [
+        3.108693,
+        -8.06713,
+        33.56411
+      ],
+      "ra": 291.07432,
+      "dec": 75.5558405,
+      "syDistPc": 10.6267,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "G 264-012",
+      "name": "G 264-012",
+      "pos": [
+        17.183859,
+        -11.299728,
+        47.993458
+      ],
+      "ra": 326.6719598,
+      "dec": 66.803848,
+      "syDistPc": 16.009,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "G 9-40",
+      "name": "G 9-40",
+      "pos": [
+        -59.804879,
+        60.394699,
+        32.753877
+      ],
+      "ra": 134.7188514,
+      "dec": 21.0747961,
+      "syDistPc": 27.9276,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 1002",
+      "name": "GJ 1002",
+      "pos": [
+        15.670573,
+        0.458649,
+        -2.076819
+      ],
+      "ra": 1.6764641,
+      "dec": -7.5462123,
+      "syDistPc": 4.84867,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 1061",
+      "name": "GJ 1061",
+      "pos": [
+        5.020431,
+        6.910855,
+        -8.39833
+      ],
+      "ra": 54.0032486,
+      "dec": -44.5143104,
+      "syDistPc": 3.67278,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 1132",
+      "name": "GJ 1132",
+      "pos": [
+        -25.080864,
+        12.390795,
+        -30.162262
+      ],
+      "ra": 153.7090696,
+      "dec": -47.1549358,
+      "syDistPc": 12.613,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 1148",
+      "name": "GJ 1148",
+      "pos": [
+        -26.29524,
+        2.100604,
+        24.385861
+      ],
+      "ra": 175.4326081,
+      "dec": 42.7515862,
+      "syDistPc": 11.0143,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 1151",
+      "name": "GJ 1151",
+      "pos": [
+        -17.397496,
+        0.689484,
+        19.592211
+      ],
+      "ra": 177.7304866,
+      "dec": 48.3732334,
+      "syDistPc": 8.03625,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 1214",
+      "name": "GJ 1214",
+      "pos": [
+        -9.215938,
+        -46.67813,
+        4.129741
+      ],
+      "ra": 258.8313991,
+      "dec": 4.9606795,
+      "syDistPc": 14.6427,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 1252",
+      "name": "GJ 1252",
+      "pos": [
+        22.056993,
+        -29.346586,
+        -55.385758
+      ],
+      "ra": 306.9286462,
+      "dec": -56.4622865,
+      "syDistPc": 20.373,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 1265",
+      "name": "GJ 1265",
+      "pos": [
+        28.494506,
+        -14.248796,
+        -10.159423
+      ],
+      "ra": 333.4324675,
+      "dec": -17.6870623,
+      "syDistPc": 10.2525,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 1289",
+      "name": "GJ 1289",
+      "pos": [
+        21.826562,
+        -1.609987,
+        16.216171
+      ],
+      "ra": 355.7813464,
+      "dec": 36.5363314,
+      "syDistPc": 8.35147,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 143",
+      "name": "GJ 143",
+      "pos": [
+        14.703668,
+        18.65164,
+        -47.63628
+      ],
+      "ra": 51.7501882,
+      "dec": -63.500166,
+      "syDistPc": 16.32,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 15 A",
+      "name": "GJ 15 A",
+      "pos": [
+        8.327181,
+        0.671842,
+        8.074567
+      ],
+      "ra": 4.6126677,
+      "dec": 44.0247296,
+      "syDistPc": 3.56228,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 160.2",
+      "name": "GJ 160.2",
+      "pos": [
+        37.426277,
+        69.349787,
+        -30.023862
+      ],
+      "ra": 61.6454173,
+      "dec": -20.8564724,
+      "syDistPc": 25.8557,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 163",
+      "name": "GJ 163",
+      "pos": [
+        13.674184,
+        26.070723,
+        -39.598271
+      ],
+      "ra": 62.3228353,
+      "dec": -53.3711768,
+      "syDistPc": 15.1285,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 179",
+      "name": "GJ 179",
+      "pos": [
+        11.690972,
+        38.29813,
+        4.544769
+      ],
+      "ra": 73.0245495,
+      "dec": 6.4752347,
+      "syDistPc": 12.356,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 180",
+      "name": "GJ 180",
+      "pos": [
+        10.557744,
+        35.551406,
+        -11.890004
+      ],
+      "ra": 73.460097,
+      "dec": -17.776194,
+      "syDistPc": 11.9407,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 229",
+      "name": "GJ 229",
+      "pos": [
+        -0.803625,
+        17.404916,
+        -6.992787
+      ],
+      "ra": 92.6435993,
+      "dec": -21.8677233,
+      "syDistPc": 5.75624,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 238",
+      "name": "GJ 238",
+      "pos": [
+        -3.809411,
+        25.627401,
+        -42.321105
+      ],
+      "ra": 98.454881,
+      "dec": -58.5250316,
+      "syDistPc": 15.2142,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 251",
+      "name": "GJ 251",
+      "pos": [
+        -3.604433,
+        14.785697,
+        9.984069
+      ],
+      "ra": 103.7002499,
+      "dec": 33.2664632,
+      "syDistPc": 5.58057,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 27.1",
+      "name": "GJ 27.1",
+      "pos": [
+        54.308954,
+        9.574181,
+        -53.729081
+      ],
+      "ra": 9.9980016,
+      "dec": -44.2541679,
+      "syDistPc": 23.6062,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 273",
+      "name": "GJ 273",
+      "pos": [
+        -7.15882,
+        17.851241,
+        1.759092
+      ],
+      "ra": 111.852091,
+      "dec": 5.225807,
+      "syDistPc": 5.921535,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 3021",
+      "name": "GJ 3021",
+      "pos": [
+        10.063873,
+        0.714932,
+        -56.363811
+      ],
+      "ra": 4.0634323,
+      "dec": -79.8514218,
+      "syDistPc": 17.5559,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 3082",
+      "name": "GJ 3082",
+      "pos": [
+        30.230685,
+        10.199156,
+        -43.817888
+      ],
+      "ra": 18.6432425,
+      "dec": -53.9407751,
+      "syDistPc": 16.6186,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 3090",
+      "name": "GJ 3090",
+      "pos": [
+        47.095562,
+        17.550647,
+        -53.361551
+      ],
+      "ra": 20.4384281,
+      "dec": -46.7147234,
+      "syDistPc": 22.4751,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 317",
+      "name": "GJ 317",
+      "pos": [
+        -29.376361,
+        34.707484,
+        -19.726685
+      ],
+      "ra": 130.2445254,
+      "dec": -23.452809,
+      "syDistPc": 15.1968,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 3222",
+      "name": "GJ 3222",
+      "pos": [
+        28.708298,
+        35.322084,
+        -38.296787
+      ],
+      "ra": 50.8972464,
+      "dec": -40.0762325,
+      "syDistPc": 18.23817,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 328",
+      "name": "GJ 328",
+      "pos": [
+        -46.306166,
+        48.318083,
+        1.801576
+      ],
+      "ra": 133.7819507,
+      "dec": 1.5420011,
+      "syDistPc": 20.5266,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 3293",
+      "name": "GJ 3293",
+      "pos": [
+        23.144834,
+        54.92099,
+        -28.008588
+      ],
+      "ra": 67.1484425,
+      "dec": -25.1713396,
+      "syDistPc": 20.1903,
+      "planetCount": 4,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 3323",
+      "name": "GJ 3323",
+      "pos": [
+        4.360877,
+        16.846347,
+        -2.12078
+      ],
+      "ra": 75.4868824,
+      "dec": -6.9485133,
+      "syDistPc": 5.37484,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 3341",
+      "name": "GJ 3341",
+      "pos": [
+        12.61994,
+        64.605691,
+        -40.015168
+      ],
+      "ra": 78.9471415,
+      "dec": -31.2948458,
+      "syDistPc": 23.619,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 3378",
+      "name": "GJ 3378",
+      "pos": [
+        -0.065668,
+        12.748497,
+        21.72366
+      ],
+      "ra": 90.2951302,
+      "dec": 59.5931917,
+      "syDistPc": 7.72274,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 338 B",
+      "name": "GJ 338 B",
+      "pos": [
+        -9.390816,
+        8.281544,
+        16.426147
+      ],
+      "ra": 138.5916722,
+      "dec": 52.6835211,
+      "syDistPc": 6.33256,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 341",
+      "name": "GJ 341",
+      "pos": [
+        -13.023933,
+        10.774573,
+        -29.611643
+      ],
+      "ra": 140.3993759,
+      "dec": -60.2811692,
+      "syDistPc": 10.454,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 3512",
+      "name": "GJ 3512",
+      "pos": [
+        -10.1659,
+        11.973798,
+        26.656914
+      ],
+      "ra": 130.3316616,
+      "dec": 59.4918364,
+      "syDistPc": 9.48637,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 357",
+      "name": "GJ 357",
+      "pos": [
+        -23.155963,
+        16.819183,
+        -11.368927
+      ],
+      "ra": 144.0074644,
+      "dec": -21.6650634,
+      "syDistPc": 9.44181,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 3634",
+      "name": "GJ 3634",
+      "pos": [
+        -54.853207,
+        15.06445,
+        -34.374809
+      ],
+      "ra": 164.6433493,
+      "dec": -31.1443383,
+      "syDistPc": 20.3779,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 367",
+      "name": "GJ 367",
+      "pos": [
+        -17.775826,
+        11.935196,
+        -22.001239
+      ],
+      "ra": 146.121464,
+      "dec": -45.7790165,
+      "syDistPc": 9.41263,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 3779",
+      "name": "GJ 3779",
+      "pos": [
+        -38.157196,
+        -14.443931,
+        18.562401
+      ],
+      "ra": 200.7335358,
+      "dec": 24.4639425,
+      "syDistPc": 13.743,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 3929",
+      "name": "GJ 3929",
+      "pos": [
+        -21.281154,
+        -36.240333,
+        29.875828
+      ],
+      "ra": 239.5775678,
+      "dec": 35.4081141,
+      "syDistPc": 15.8095,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 393",
+      "name": "GJ 393",
+      "pos": [
+        -21.143904,
+        8.875546,
+        0.335352
+      ],
+      "ra": 157.2288672,
+      "dec": 0.8378485,
+      "syDistPc": 7.03149,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 3942",
+      "name": "GJ 3942",
+      "pos": [
+        -15.484268,
+        -29.448893,
+        44.063474
+      ],
+      "ra": 242.2645452,
+      "dec": 52.9441443,
+      "syDistPc": 16.9287,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 3988",
+      "name": "GJ 3988",
+      "pos": [
+        -4.928739,
+        -19.550448,
+        25.264815
+      ],
+      "ra": 255.8503747,
+      "dec": 51.4089795,
+      "syDistPc": 9.9105,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 3998",
+      "name": "GJ 3998",
+      "pos": [
+        -11.081201,
+        -57.018735,
+        11.349796
+      ],
+      "ra": 259.0020507,
+      "dec": 11.0561751,
+      "syDistPc": 18.1459,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 411",
+      "name": "GJ 411",
+      "pos": [
+        -14.526142,
+        3.666381,
+        10.873782
+      ],
+      "ra": 165.834471,
+      "dec": 35.972317,
+      "syDistPc": 5.675773,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 414 A",
+      "name": "GJ 414 A",
+      "pos": [
+        -32.672673,
+        7.079302,
+        19.649192
+      ],
+      "ra": 167.7745044,
+      "dec": 30.4451688,
+      "syDistPc": 11.8893,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 422",
+      "name": "GJ 422",
+      "pos": [
+        -21.756761,
+        4.236556,
+        -34.849814
+      ],
+      "ra": 168.9810458,
+      "dec": -57.5425629,
+      "syDistPc": 12.6631,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 4274",
+      "name": "GJ 4274",
+      "pos": [
+        20.513441,
+        -9.227478,
+        -7.139786
+      ],
+      "ra": 335.7805478,
+      "dec": -17.6104078,
+      "syDistPc": 7.23556,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 4276",
+      "name": "GJ 4276",
+      "pos": [
+        32.429847,
+        -14.22076,
+        59.90623
+      ],
+      "ra": 336.3221454,
+      "dec": 59.412503,
+      "syDistPc": 21.3362,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 433",
+      "name": "GJ 433",
+      "pos": [
+        -24.779583,
+        2.664832,
+        -15.904053
+      ],
+      "ra": 173.8619194,
+      "dec": -32.5436302,
+      "syDistPc": 9.06456,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 436",
+      "name": "GJ 436",
+      "pos": [
+        -28.332371,
+        2.204663,
+        14.29468
+      ],
+      "ra": 175.5505363,
+      "dec": 26.7030669,
+      "syDistPc": 9.75321,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 463",
+      "name": "GJ 463",
+      "pos": [
+        -26.082018,
+        -2.623585,
+        53.823226
+      ],
+      "ra": 185.7440496,
+      "dec": 64.0324311,
+      "syDistPc": 18.3554,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 480",
+      "name": "GJ 480",
+      "pos": [
+        -44.815257,
+        -7.671218,
+        9.411699
+      ],
+      "ra": 189.7134226,
+      "dec": 11.6950708,
+      "syDistPc": 14.2358,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 486",
+      "name": "GJ 486",
+      "pos": [
+        -25.388955,
+        -5.388036,
+        4.459507
+      ],
+      "ra": 191.981531,
+      "dec": 9.7494181,
+      "syDistPc": 8.07426,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 504",
+      "name": "GJ 504",
+      "pos": [
+        -53.268208,
+        -18.541976,
+        9.362733
+      ],
+      "ra": 199.192348,
+      "dec": 9.4249781,
+      "syDistPc": 17.5299,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 508.2",
+      "name": "GJ 508.2",
+      "pos": [
+        -42.069332,
+        -15.515513,
+        30.561667
+      ],
+      "ra": 200.2443854,
+      "dec": 34.2776644,
+      "syDistPc": 16.6374,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 514",
+      "name": "GJ 514",
+      "pos": [
+        -22.578809,
+        -9.354315,
+        4.473443
+      ],
+      "ra": 202.5040424,
+      "dec": 10.3725387,
+      "syDistPc": 7.61778,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 536",
+      "name": "GJ 536",
+      "pos": [
+        -29.293131,
+        -17.089914,
+        -1.571037
+      ],
+      "ra": 210.2597264,
+      "dec": -2.6522901,
+      "syDistPc": 10.4092,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 581",
+      "name": "GJ 581",
+      "pos": [
+        -13.123182,
+        -15.560272,
+        -2.76036
+      ],
+      "ra": 229.8564725,
+      "dec": -7.7226935,
+      "syDistPc": 6.2981,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 625",
+      "name": "GJ 625",
+      "pos": [
+        -4.94013,
+        -11.283769,
+        17.144163
+      ],
+      "ra": 246.3557854,
+      "dec": 54.3033625,
+      "syDistPc": 6.47249,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 649",
+      "name": "GJ 649",
+      "pos": [
+        -8.130551,
+        -29.390158,
+        14.703319
+      ],
+      "ra": 254.5363221,
+      "dec": 25.7419719,
+      "syDistPc": 10.3796,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 667 C",
+      "name": "GJ 667 C",
+      "pos": [
+        -3.443627,
+        -19.045519,
+        -13.550928
+      ],
+      "ra": 259.7510609,
+      "dec": -34.9977651,
+      "syDistPc": 7.24396,
+      "planetCount": 5,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 674",
+      "name": "GJ 674",
+      "pos": [
+        -1.381099,
+        -10.04322,
+        -10.833036
+      ],
+      "ra": 262.1700476,
+      "dec": -46.8989826,
+      "syDistPc": 4.54896,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 676 A",
+      "name": "GJ 676 A",
+      "pos": [
+        -4.209419,
+        -32.168452,
+        -40.987984
+      ],
+      "ra": 262.5448903,
+      "dec": -51.6377777,
+      "syDistPc": 16.0272,
+      "planetCount": 4,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 680",
+      "name": "GJ 680",
+      "pos": [
+        -2.247182,
+        -20.709976,
+        -23.694389
+      ],
+      "ra": 263.8072214,
+      "dec": -48.6788427,
+      "syDistPc": 9.67315,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 682",
+      "name": "GJ 682",
+      "pos": [
+        -1.168203,
+        -11.623866,
+        -11.409657
+      ],
+      "ra": 264.2610245,
+      "dec": -44.3232519,
+      "syDistPc": 5.00671,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 685",
+      "name": "GJ 685",
+      "pos": [
+        -2.355318,
+        -22.02485,
+        41.102313
+      ],
+      "ra": 263.8960378,
+      "dec": 61.6793482,
+      "syDistPc": 14.3155,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 687",
+      "name": "GJ 687",
+      "pos": [
+        -0.562726,
+        -5.449267,
+        13.789808
+      ],
+      "ra": 264.1041731,
+      "dec": 68.3336741,
+      "syDistPc": 4.54939,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 720 A",
+      "name": "GJ 720 A",
+      "pos": [
+        5.435182,
+        -34.9903,
+        36.343718
+      ],
+      "ra": 278.8294172,
+      "dec": 45.7456038,
+      "syDistPc": 15.5575,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 724",
+      "name": "GJ 724",
+      "pos": [
+        9.568389,
+        -52.97532,
+        -12.807337
+      ],
+      "ra": 280.238365,
+      "dec": -13.3824997,
+      "syDistPc": 16.9658,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 740",
+      "name": "GJ 740",
+      "pos": [
+        9.017743,
+        -34.869732,
+        3.723807
+      ],
+      "ra": 284.4997178,
+      "dec": 5.902867,
+      "syDistPc": 11.1017,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 806",
+      "name": "GJ 806",
+      "pos": [
+        18.481551,
+        -21.059559,
+        27.534568
+      ],
+      "ra": 311.2697002,
+      "dec": 44.5002351,
+      "syDistPc": 12.0445,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 832",
+      "name": "GJ 832",
+      "pos": [
+        8.524907,
+        -6.333172,
+        -12.222234
+      ],
+      "ra": 323.3912616,
+      "dec": -49.0125169,
+      "syDistPc": 4.96435,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 849",
+      "name": "GJ 849",
+      "pos": [
+        25.3592,
+        -13.244514,
+        -2.322391
+      ],
+      "ra": 332.4229938,
+      "dec": -4.6408317,
+      "syDistPc": 8.80058,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 86",
+      "name": "GJ 86",
+      "pos": [
+        18.71406,
+        11.978488,
+        -27.264025
+      ],
+      "ra": 32.6224785,
+      "dec": -50.8209945,
+      "syDistPc": 10.7836,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 876",
+      "name": "GJ 876",
+      "pos": [
+        14.156571,
+        -4.240719,
+        -3.757716
+      ],
+      "ra": 343.3239737,
+      "dec": -14.2665958,
+      "syDistPc": 4.67517,
+      "planetCount": 4,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 887",
+      "name": "GJ 887",
+      "pos": [
+        8.449487,
+        -2.028112,
+        -6.277973
+      ],
+      "ra": 346.5027573,
+      "dec": -35.8473489,
+      "syDistPc": 3.28679,
+      "planetCount": 4,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 896 A",
+      "name": "GJ 896 A",
+      "pos": [
+        19.050113,
+        -2.349172,
+        6.962303
+      ],
+      "ra": 352.9700384,
+      "dec": 19.9370011,
+      "syDistPc": 6.26022,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 900 A",
+      "name": "GJ 900 A",
+      "pos": [
+        67.432234,
+        -7.381913,
+        1.901347
+      ],
+      "ra": 353.7526177,
+      "dec": 1.6055211,
+      "syDistPc": 20.8065,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 9066",
+      "name": "GJ 9066",
+      "pos": [
+        12.295598,
+        7.11571,
+        3.291327
+      ],
+      "ra": 30.0588307,
+      "dec": 13.0443172,
+      "syDistPc": 4.471,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 9404",
+      "name": "GJ 9404",
+      "pos": [
+        -68.28969,
+        -5.791114,
+        37.029908
+      ],
+      "ra": 184.8472095,
+      "dec": 28.3827126,
+      "syDistPc": 23.8839,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 96",
+      "name": "GJ 96",
+      "pos": [
+        21.23178,
+        15.179398,
+        28.865234
+      ],
+      "ra": 35.5624031,
+      "dec": 47.8802075,
+      "syDistPc": 11.9315,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 9714",
+      "name": "GJ 9714",
+      "pos": [
+        40.174106,
+        -39.597447,
+        -35.970781
+      ],
+      "ra": 315.4141767,
+      "dec": -32.5250028,
+      "syDistPc": 20.5121,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "GJ 9773",
+      "name": "GJ 9773",
+      "pos": [
+        45.814636,
+        -23.192608,
+        7.720516
+      ],
+      "ra": 333.1502333,
+      "dec": 8.5503355,
+      "syDistPc": 15.9211,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Gl 378",
+      "name": "Gl 378",
+      "pos": [
+        -28.384474,
+        16.002608,
+        36.293859
+      ],
+      "ra": 150.5865513,
+      "dec": 48.0824515,
+      "syDistPc": 14.9545,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Gl 410",
+      "name": "Gl 410",
+      "pos": [
+        -34.96834,
+        8.939048,
+        14.558207
+      ],
+      "ra": 165.6604212,
+      "dec": 21.9669164,
+      "syDistPc": 11.9324,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Gl 49",
+      "name": "Gl 49",
+      "pos": [
+        14.361113,
+        4.028272,
+        28.464436
+      ],
+      "ra": 15.6687321,
+      "dec": 62.3454386,
+      "syDistPc": 9.8528,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Gl 686",
+      "name": "Gl 686",
+      "pos": [
+        -2.427189,
+        -25.099356,
+        8.484286
+      ],
+      "ra": 264.4764878,
+      "dec": 18.5959509,
+      "syDistPc": 8.15728,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Gl 725 A",
+      "name": "Gl 725 A",
+      "pos": [
+        1.076209,
+        -5.704717,
+        9.910066
+      ],
+      "ra": 280.6834312,
+      "dec": 59.638109,
+      "syDistPc": 3.5214,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Gl 725 B",
+      "name": "Gl 725 B",
+      "pos": [
+        2.094154,
+        -11.087927,
+        19.253862
+      ],
+      "ra": 280.695353,
+      "dec": 59.62706,
+      "syDistPc": 6.842357,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Gliese 12",
+      "name": "Gliese 12",
+      "pos": [
+        38.621661,
+        2.672183,
+        9.335593
+      ],
+      "ra": 3.9579137,
+      "dec": 13.5576175,
+      "syDistPc": 12.21,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Gliese 48",
+      "name": "Gliese 48",
+      "pos": [
+        8.128568,
+        2.278446,
+        25.493234
+      ],
+      "ra": 15.6582402,
+      "dec": 71.6781735,
+      "syDistPc": 8.23366,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 103949",
+      "name": "HD 103949",
+      "pos": [
+        -79.002183,
+        0.623313,
+        -35.049839
+      ],
+      "ra": 179.5479558,
+      "dec": -23.9241221,
+      "syDistPc": 26.4997,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 104067",
+      "name": "HD 104067",
+      "pos": [
+        -62.267914,
+        0.225666,
+        -23.102478
+      ],
+      "ra": 179.7923543,
+      "dec": -20.3556058,
+      "syDistPc": 20.3632,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 10647",
+      "name": "HD 10647",
+      "pos": [
+        30.151807,
+        14.461439,
+        -45.592495
+      ],
+      "ra": 25.6233526,
+      "dec": -53.7412852,
+      "syDistPc": 17.3357,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 111232",
+      "name": "HD 111232",
+      "pos": [
+        -33.943483,
+        -7.348736,
+        -87.828099
+      ],
+      "ra": 192.2159553,
+      "dec": -68.4246679,
+      "syDistPc": 28.9571,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 113538",
+      "name": "HD 113538",
+      "pos": [
+        -31.076455,
+        -9.048506,
+        -42.099791
+      ],
+      "ra": 196.233933,
+      "dec": -52.4463502,
+      "syDistPc": 16.2817,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 114783",
+      "name": "HD 114783",
+      "pos": [
+        -65.216667,
+        -21.419251,
+        -2.715019
+      ],
+      "ra": 198.1818436,
+      "dec": -2.2649921,
+      "syDistPc": 21.0628,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 115404 A",
+      "name": "HD 115404 A",
+      "pos": [
+        -32.341086,
+        -11.272219,
+        10.48152
+      ],
+      "ra": 199.2155793,
+      "dec": 17.0160384,
+      "syDistPc": 10.9816,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 125595",
+      "name": "HD 125595",
+      "pos": [
+        -57.136946,
+        -40.520273,
+        -59.602178
+      ],
+      "ra": 215.3434326,
+      "dec": -40.3942443,
+      "syDistPc": 28.1989,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 127506",
+      "name": "HD 127506",
+      "pos": [
+        -47.365895,
+        -36.588528,
+        42.620431
+      ],
+      "ra": 217.6848544,
+      "dec": 35.4546059,
+      "syDistPc": 22.5279,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 128311",
+      "name": "HD 128311",
+      "pos": [
+        -40.790669,
+        -33.035439,
+        9.015159
+      ],
+      "ra": 219.0032292,
+      "dec": 9.7454368,
+      "syDistPc": 16.3292,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 128356",
+      "name": "HD 128356",
+      "pos": [
+        -59.456254,
+        -48.612899,
+        -37.13188
+      ],
+      "ra": 219.2702793,
+      "dec": -25.8031728,
+      "syDistPc": 26.1548,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 134060",
+      "name": "HD 134060",
+      "pos": [
+        -25.220759,
+        -27.702445,
+        -68.776769
+      ],
+      "ra": 227.6847587,
+      "dec": -61.4223747,
+      "syDistPc": 24.0125,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 134606",
+      "name": "HD 134606",
+      "pos": [
+        -19.189502,
+        -21.928014,
+        -82.378575
+      ],
+      "ra": 228.8103897,
+      "dec": -70.5203328,
+      "syDistPc": 26.7909,
+      "planetCount": 5,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 134987",
+      "name": "HD 134987",
+      "pos": [
+        -51.282875,
+        -57.695422,
+        -36.504711
+      ],
+      "ra": 228.3675397,
+      "dec": -25.3096721,
+      "syDistPc": 26.1804,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 136352",
+      "name": "HD 136352",
+      "pos": [
+        -20.280731,
+        -24.550169,
+        -35.764185
+      ],
+      "ra": 230.4401147,
+      "dec": -48.3188174,
+      "syDistPc": 14.682,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 13808",
+      "name": "HD 13808",
+      "pos": [
+        45.575957,
+        29.799164,
+        -74.247921
+      ],
+      "ra": 33.1780708,
+      "dec": -53.7437591,
+      "syDistPc": 28.2305,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 140901",
+      "name": "HD 140901",
+      "pos": [
+        -21.45019,
+        -32.865625,
+        -30.571254
+      ],
+      "ra": 236.8689866,
+      "dec": -37.9172333,
+      "syDistPc": 15.2528,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 141004",
+      "name": "HD 141004",
+      "pos": [
+        -21.032667,
+        -31.909735,
+        4.9316
+      ],
+      "ra": 236.6099205,
+      "dec": 7.3527684,
+      "syDistPc": 11.8148,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 142",
+      "name": "HD 142",
+      "pos": [
+        55.92454,
+        1.546169,
+        -64.529634
+      ],
+      "ra": 1.5836771,
+      "dec": -49.0753625,
+      "syDistPc": 26.1853,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 142022 A",
+      "name": "HD 142022 A",
+      "pos": [
+        -5.180364,
+        -9.971848,
+        -111.24093
+      ],
+      "ra": 242.5481731,
+      "dec": -84.2317494,
+      "syDistPc": 34.2802,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 1461",
+      "name": "HD 1461",
+      "pos": [
+        75.488201,
+        6.174778,
+        -10.7169
+      ],
+      "ra": 4.6762645,
+      "dec": -8.0536206,
+      "syDistPc": 23.4534,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 147379",
+      "name": "HD 147379",
+      "pos": [
+        -5.917565,
+        -12.226129,
+        32.374489
+      ],
+      "ra": 244.1725686,
+      "dec": 67.2392041,
+      "syDistPc": 10.7643,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 147513",
+      "name": "HD 147513",
+      "pos": [
+        -13.263315,
+        -29.797997,
+        -26.594703
+      ],
+      "ra": 246.0057894,
+      "dec": -39.1929661,
+      "syDistPc": 12.9032,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 149806",
+      "name": "HD 149806",
+      "pos": [
+        -23.387407,
+        -61.845698,
+        0.293905
+      ],
+      "ra": 249.2855187,
+      "dec": 0.2546794,
+      "syDistPc": 20.2727,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 153557",
+      "name": "HD 153557",
+      "pos": [
+        -10.610881,
+        -38.185637,
+        43.0515
+      ],
+      "ra": 254.4706516,
+      "dec": 47.3678558,
+      "syDistPc": 17.9412,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 154088",
+      "name": "HD 154088",
+      "pos": [
+        -12.555058,
+        -50.79506,
+        -28.508648
+      ],
+      "ra": 256.1164214,
+      "dec": -28.5838342,
+      "syDistPc": 18.2692,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 154345",
+      "name": "HD 154345",
+      "pos": [
+        -10.06214,
+        -39.338951,
+        43.674544
+      ],
+      "ra": 255.6524619,
+      "dec": 47.0855544,
+      "syDistPc": 18.284,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 155918",
+      "name": "HD 155918",
+      "pos": [
+        -3.738286,
+        -22.426636,
+        -86.969165
+      ],
+      "ra": 260.5364025,
+      "dec": -75.349239,
+      "syDistPc": 27.561,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 156668",
+      "name": "HD 156668",
+      "pos": [
+        -12.71816,
+        -68.079461,
+        38.751245
+      ],
+      "ra": 259.4183491,
+      "dec": 29.228161,
+      "syDistPc": 24.3323,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 158259",
+      "name": "HD 158259",
+      "pos": [
+        -8.024458,
+        -52.745317,
+        70.2647
+      ],
+      "ra": 261.3495847,
+      "dec": 52.7904721,
+      "syDistPc": 27.0498,
+      "planetCount": 5,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 160691",
+      "name": "HD 160691",
+      "pos": [
+        -2.173121,
+        -31.36149,
+        -39.998982
+      ],
+      "ra": 266.0361585,
+      "dec": -51.8348751,
+      "syDistPc": 15.5981,
+      "planetCount": 4,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 16417",
+      "name": "HD 16417",
+      "pos": [
+        52.811557,
+        43.139788,
+        -47.005552
+      ],
+      "ra": 39.2441029,
+      "dec": -34.5790905,
+      "syDistPc": 25.3936,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 164922",
+      "name": "HD 164922",
+      "pos": [
+        0.707807,
+        -64.321856,
+        31.806306
+      ],
+      "ra": 270.6304652,
+      "dec": 26.3104077,
+      "syDistPc": 22.0016,
+      "planetCount": 4,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 168009",
+      "name": "HD 168009",
+      "pos": [
+        3.627857,
+        -53.424292,
+        53.93908
+      ],
+      "ra": 273.8847918,
+      "dec": 45.2088229,
+      "syDistPc": 23.3032,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 177565",
+      "name": "HD 177565",
+      "pos": [
+        12.539598,
+        -41.750116,
+        -33.828795
+      ],
+      "ra": 286.7175787,
+      "dec": -37.8122394,
+      "syDistPc": 16.9179,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 180617",
+      "name": "HD 180617",
+      "pos": [
+        6.322866,
+        -18.128539,
+        1.73485
+      ],
+      "ra": 289.2277322,
+      "dec": 5.1631615,
+      "syDistPc": 5.91059,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 18143",
+      "name": "HD 18143",
+      "pos": [
+        47.207614,
+        45.451163,
+        33.20628
+      ],
+      "ra": 43.9140248,
+      "dec": 26.8723829,
+      "syDistPc": 22.5243,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 181433",
+      "name": "HD 181433",
+      "pos": [
+        12.706213,
+        -32.610984,
+        -80.368389
+      ],
+      "ra": 291.2873731,
+      "dec": -66.4677838,
+      "syDistPc": 26.8762,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 185283",
+      "name": "HD 185283",
+      "pos": [
+        24.286912,
+        -51.325187,
+        -85.211353
+      ],
+      "ra": 295.3233609,
+      "dec": -56.3221096,
+      "syDistPc": 31.395,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 189567",
+      "name": "HD 189567",
+      "pos": [
+        11.72892,
+        -19.218101,
+        -53.885517
+      ],
+      "ra": 301.3959616,
+      "dec": -67.3237992,
+      "syDistPc": 17.9055,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 189733",
+      "name": "HD 189733",
+      "pos": [
+        29.895231,
+        -51.402036,
+        24.885995
+      ],
+      "ra": 300.1821223,
+      "dec": 22.7097759,
+      "syDistPc": 19.7638,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 190007",
+      "name": "HD 190007",
+      "pos": [
+        21.132728,
+        -35.597749,
+        2.406348
+      ],
+      "ra": 300.6956339,
+      "dec": 3.3266992,
+      "syDistPc": 12.7141,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 190360",
+      "name": "HD 190360",
+      "pos": [
+        23.249665,
+        -38.833135,
+        26.020499
+      ],
+      "ra": 300.9092476,
+      "dec": 29.894541,
+      "syDistPc": 16.0069,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 192263",
+      "name": "HD 192263",
+      "pos": [
+        35.343222,
+        -53.399634,
+        -0.967684
+      ],
+      "ra": 303.4990864,
+      "dec": -0.8657574,
+      "syDistPc": 19.6359,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 192310",
+      "name": "HD 192310",
+      "pos": [
+        14.227622,
+        -21.230139,
+        -13.040751
+      ],
+      "ra": 303.8284712,
+      "dec": -27.0337556,
+      "syDistPc": 8.79687,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 199509",
+      "name": "HD 199509",
+      "pos": [
+        8.086312,
+        -7.450197,
+        -78.508058
+      ],
+      "ra": 317.3445632,
+      "dec": -82.0274926,
+      "syDistPc": 24.3056,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 19994",
+      "name": "HD 19994",
+      "pos": [
+        48.960972,
+        54.748941,
+        -1.533896
+      ],
+      "ra": 48.1943193,
+      "dec": -1.1963955,
+      "syDistPc": 22.5242,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 207496",
+      "name": "HD 207496",
+      "pos": [
+        14.422314,
+        -8.762641,
+        -75.120264
+      ],
+      "ra": 328.7181708,
+      "dec": -77.3388025,
+      "syDistPc": 23.606,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 20794",
+      "name": "HD 20794",
+      "pos": [
+        9.193983,
+        10.956872,
+        -13.369119
+      ],
+      "ra": 49.9997666,
+      "dec": -43.0666533,
+      "syDistPc": 6.00278,
+      "planetCount": 4,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 210277",
+      "name": "HD 210277",
+      "pos": [
+        61.013569,
+        -31.931284,
+        -9.128002
+      ],
+      "ra": 332.3748117,
+      "dec": -7.5505962,
+      "syDistPc": 21.2985,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 211970",
+      "name": "HD 211970",
+      "pos": [
+        22.604016,
+        -10.269739,
+        -34.883692
+      ],
+      "ra": 335.5661579,
+      "dec": -54.5596006,
+      "syDistPc": 13.1277,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 21411",
+      "name": "HD 21411",
+      "pos": [
+        50.851404,
+        64.037682,
+        -48.392381
+      ],
+      "ra": 51.5474155,
+      "dec": -30.6168403,
+      "syDistPc": 29.1328,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 215152",
+      "name": "HD 215152",
+      "pos": [
+        66.123543,
+        -22.977371,
+        -7.854543
+      ],
+      "ra": 340.8380941,
+      "dec": -6.4020685,
+      "syDistPc": 21.5974,
+      "planetCount": 4,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 216437",
+      "name": "HD 216437",
+      "pos": [
+        28.470887,
+        -8.344912,
+        -81.839997
+      ],
+      "ra": 343.6639631,
+      "dec": -70.0733957,
+      "syDistPc": 26.6902,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 216520",
+      "name": "HD 216520",
+      "pos": [
+        6.653206,
+        -2.177576,
+        63.384683
+      ],
+      "ra": 341.8768719,
+      "dec": 83.6975307,
+      "syDistPc": 19.552,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 217107",
+      "name": "HD 217107",
+      "pos": [
+        63.017989,
+        -17.399796,
+        -2.734864
+      ],
+      "ra": 344.5647243,
+      "dec": -2.3954489,
+      "syDistPc": 20.0619,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 219077",
+      "name": "HD 219077",
+      "pos": [
+        42.78607,
+        -8.680089,
+        -84.591805
+      ],
+      "ra": 348.5319387,
+      "dec": -62.7018297,
+      "syDistPc": 29.1864,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 219134",
+      "name": "HD 219134",
+      "pos": [
+        11.310604,
+        -2.334656,
+        17.899759
+      ],
+      "ra": 348.3372026,
+      "dec": 57.1696255,
+      "syDistPc": 6.53127,
+      "planetCount": 6,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 221420",
+      "name": "HD 221420",
+      "pos": [
+        22.032135,
+        -2.575746,
+        -99.118177
+      ],
+      "ra": 353.3319001,
+      "dec": -77.3853286,
+      "syDistPc": 31.1415,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 222237",
+      "name": "HD 222237",
+      "pos": [
+        11.042916,
+        -0.984026,
+        -35.650702
+      ],
+      "ra": 354.9078642,
+      "dec": -72.7253271,
+      "syDistPc": 11.4469,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 22496",
+      "name": "HD 22496",
+      "pos": [
+        17.3996,
+        23.735741,
+        -33.168702
+      ],
+      "ra": 53.7565398,
+      "dec": -48.4178173,
+      "syDistPc": 13.5956,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 238090",
+      "name": "HD 238090",
+      "pos": [
+        -28.823689,
+        -1.555302,
+        40.447426
+      ],
+      "ra": 183.0886375,
+      "dec": 54.486153,
+      "syDistPc": 15.2354,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 260655",
+      "name": "HD 260655",
+      "pos": [
+        -5.023258,
+        30.703623,
+        9.849097
+      ],
+      "ra": 99.2915429,
+      "dec": 17.5662696,
+      "syDistPc": 10.0055,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 27442",
+      "name": "HD 27442",
+      "pos": [
+        13.278009,
+        27.369957,
+        -51.240189
+      ],
+      "ra": 64.1205476,
+      "dec": -59.3028771,
+      "syDistPc": 18.2704,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 285968",
+      "name": "HD 285968",
+      "pos": [
+        9.638553,
+        27.577975,
+        10.032526
+      ],
+      "ra": 70.7353853,
+      "dec": 18.953358,
+      "syDistPc": 9.47045,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 29985",
+      "name": "HD 29985",
+      "pos": [
+        28.220975,
+        79.789417,
+        -56.916321
+      ],
+      "ra": 70.5216589,
+      "dec": -33.9210696,
+      "syDistPc": 31.2707,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 30562",
+      "name": "HD 30562",
+      "pos": [
+        26.020923,
+        80.817622,
+        -8.437238
+      ],
+      "ra": 72.1529519,
+      "dec": -5.6751152,
+      "syDistPc": 26.1597,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 33564",
+      "name": "HD 33564",
+      "pos": [
+        2.077062,
+        12.598224,
+        67.136493
+      ],
+      "ra": 80.6378979,
+      "dec": 79.2318488,
+      "syDistPc": 20.9531,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 3651",
+      "name": "HD 3651",
+      "pos": [
+        33.346449,
+        5.783143,
+        13.160534
+      ],
+      "ra": 9.8387218,
+      "dec": 21.2488844,
+      "syDistPc": 11.1336,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 3765",
+      "name": "HD 3765",
+      "pos": [
+        43.960105,
+        7.915453,
+        37.725596
+      ],
+      "ra": 10.2072994,
+      "dec": 40.1842918,
+      "syDistPc": 17.926,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 39091",
+      "name": "HD 39091",
+      "pos": [
+        0.980548,
+        9.822577,
+        -58.766102
+      ],
+      "ra": 84.2992798,
+      "dec": -80.4646041,
+      "syDistPc": 18.2702,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 39194",
+      "name": "HD 39194",
+      "pos": [
+        1.97592,
+        29.202182,
+        -81.023503
+      ],
+      "ra": 86.129071,
+      "dec": -70.1382377,
+      "syDistPc": 26.4131,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 39855",
+      "name": "HD 39855",
+      "pos": [
+        1.712489,
+        71.400871,
+        -25.578819
+      ],
+      "ra": 88.6260731,
+      "dec": -19.7044472,
+      "syDistPc": 23.2599,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 40307",
+      "name": "HD 40307",
+      "pos": [
+        0.545507,
+        21.07409,
+        -36.548569
+      ],
+      "ra": 88.5172191,
+      "dec": -60.0237289,
+      "syDistPc": 12.9363,
+      "planetCount": 5,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 42618",
+      "name": "HD 42618",
+      "pos": [
+        -4.129402,
+        78.709121,
+        9.373254
+      ],
+      "ra": 93.0032173,
+      "dec": 6.7819742,
+      "syDistPc": 24.3358,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 4308",
+      "name": "HD 4308",
+      "pos": [
+        29.042865,
+        5.732344,
+        -65.419757
+      ],
+      "ra": 11.1652594,
+      "dec": -65.6527159,
+      "syDistPc": 22.0158,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 45184",
+      "name": "HD 45184",
+      "pos": [
+        -6.758111,
+        62.391811,
+        -34.473209
+      ],
+      "ra": 96.1820205,
+      "dec": -28.7806402,
+      "syDistPc": 21.9532,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 48948",
+      "name": "HD 48948",
+      "pos": [
+        -5.900958,
+        26.639919,
+        47.909303
+      ],
+      "ra": 102.489811,
+      "dec": 60.3373133,
+      "syDistPc": 16.9043,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 62509",
+      "name": "HD 62509",
+      "pos": [
+        -13.203567,
+        26.681587,
+        15.846303
+      ],
+      "ra": 116.328824,
+      "dec": 28.026127,
+      "syDistPc": 10.34,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 63433",
+      "name": "HD 63433",
+      "pos": [
+        -29.944304,
+        57.573077,
+        33.585254
+      ],
+      "ra": 117.4793699,
+      "dec": 27.3631342,
+      "syDistPc": 22.4035,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 69830",
+      "name": "HD 69830",
+      "pos": [
+        -22.697358,
+        32.900453,
+        -8.961062
+      ],
+      "ra": 124.6010091,
+      "dec": -12.6364246,
+      "syDistPc": 12.5591,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 7924",
+      "name": "HD 7924",
+      "pos": [
+        11.933605,
+        4.460761,
+        53.936944
+      ],
+      "ra": 20.4956562,
+      "dec": 76.7101475,
+      "syDistPc": 16.9922,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 86728",
+      "name": "HD 86728",
+      "pos": [
+        -35.859989,
+        20.495627,
+        25.731225
+      ],
+      "ra": 150.250054,
+      "dec": 31.9218216,
+      "syDistPc": 14.9202,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 87883",
+      "name": "HD 87883",
+      "pos": [
+        -43.616889,
+        23.016605,
+        33.568882
+      ],
+      "ra": 152.1794175,
+      "dec": 34.2419984,
+      "syDistPc": 18.2912,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 90156",
+      "name": "HD 90156",
+      "pos": [
+        -56.831376,
+        25.326597,
+        -35.410298
+      ],
+      "ra": 155.9801144,
+      "dec": -29.645103,
+      "syDistPc": 21.9496,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 96700",
+      "name": "HD 96700",
+      "pos": [
+        -69.805503,
+        16.148903,
+        -41.659169
+      ],
+      "ra": 166.9742616,
+      "dec": -30.1751383,
+      "syDistPc": 25.4111,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 97658",
+      "name": "HD 97658",
+      "pos": [
+        -62.120913,
+        12.483289,
+        30.508874
+      ],
+      "ra": 168.6376584,
+      "dec": 25.7105962,
+      "syDistPc": 21.5618,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HD 99492",
+      "name": "HD 99492",
+      "pos": [
+        -58.66853,
+        8.569598,
+        3.114717
+      ],
+      "ra": 171.689687,
+      "dec": 3.0071331,
+      "syDistPc": 18.2038,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HIP 107772",
+      "name": "HIP 107772",
+      "pos": [
+        48.901127,
+        -31.156207,
+        -50.83906
+      ],
+      "ra": 327.4977057,
+      "dec": -41.2440371,
+      "syDistPc": 23.6434,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HIP 12961",
+      "name": "HIP 12961",
+      "pos": [
+        52.3717,
+        46.628822,
+        -29.889165
+      ],
+      "ra": 41.6800749,
+      "dec": -23.0860048,
+      "syDistPc": 23.371,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HIP 34222",
+      "name": "HIP 34222",
+      "pos": [
+        -18.688694,
+        63.393417,
+        34.361323
+      ],
+      "ra": 106.4257786,
+      "dec": 27.4704132,
+      "syDistPc": 22.8386,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HIP 38594",
+      "name": "HIP 38594",
+      "pos": [
+        -25.063564,
+        46.077094,
+        -24.79684
+      ],
+      "ra": 118.5439118,
+      "dec": -25.3023073,
+      "syDistPc": 17.7886,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HIP 4845",
+      "name": "HIP 4845",
+      "pos": [
+        65.185508,
+        18.185618,
+        -12.450697
+      ],
+      "ra": 15.5881733,
+      "dec": -10.4246208,
+      "syDistPc": 21.0974,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HIP 48714",
+      "name": "HIP 48714",
+      "pos": [
+        -13.467265,
+        8.081311,
+        30.541923
+      ],
+      "ra": 149.0332672,
+      "dec": 62.7859505,
+      "syDistPc": 10.5298,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HIP 54373",
+      "name": "HIP 54373",
+      "pos": [
+        -56.11064,
+        13.09416,
+        -20.168233
+      ],
+      "ra": 166.8643532,
+      "dec": -19.2916857,
+      "syDistPc": 18.7168,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HIP 55507",
+      "name": "HIP 55507",
+      "pos": [
+        -56.020477,
+        9.351773,
+        60.70976
+      ],
+      "ra": 170.5227246,
+      "dec": 46.907803,
+      "syDistPc": 25.4893,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HIP 56998",
+      "name": "HIP 56998",
+      "pos": [
+        -29.672682,
+        2.462323,
+        -29.161737
+      ],
+      "ra": 175.2563039,
+      "dec": -44.4041485,
+      "syDistPc": 12.7781,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HIP 57274",
+      "name": "HIP 57274",
+      "pos": [
+        -72.172575,
+        4.83096,
+        43.38996
+      ],
+      "ra": 176.1705487,
+      "dec": 30.9576484,
+      "syDistPc": 25.8618,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HIP 70849",
+      "name": "HIP 70849",
+      "pos": [
+        -42.976828,
+        -32.771676,
+        -56.882539
+      ],
+      "ra": 217.3270762,
+      "dec": -46.464684,
+      "syDistPc": 24.0572,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HIP 79431",
+      "name": "HIP 79431",
+      "pos": [
+        -20.239487,
+        -40.022665,
+        -15.334698
+      ],
+      "ra": 243.1742467,
+      "dec": -18.8764247,
+      "syDistPc": 14.5324,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HN Lib",
+      "name": "HN Lib",
+      "pos": [
+        -15.545399,
+        -12.395734,
+        -4.414035
+      ],
+      "ra": 218.5684823,
+      "dec": -12.5170062,
+      "syDistPc": 6.24442,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HN Peg",
+      "name": "HN Peg",
+      "pos": [
+        47.446043,
+        -31.844484,
+        15.06709
+      ],
+      "ra": 326.1315705,
+      "dec": 14.7714524,
+      "syDistPc": 18.1186,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HR 5183",
+      "name": "HR 5183",
+      "pos": [
+        -91.078761,
+        -45.879169,
+        11.348777
+      ],
+      "ra": 206.7357992,
+      "dec": 6.3498994,
+      "syDistPc": 31.4607,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HR 810",
+      "name": "HR 810",
+      "pos": [
+        27.089136,
+        23.252432,
+        -43.771626
+      ],
+      "ra": 40.6417178,
+      "dec": -50.7993484,
+      "syDistPc": 17.3181,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "HR 858",
+      "name": "HR 858",
+      "pos": [
+        65.498288,
+        61.046044,
+        -53.403787
+      ],
+      "ra": 42.9849779,
+      "dec": -30.8140609,
+      "syDistPc": 31.964,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "K2-415",
+      "name": "K2-415",
+      "pos": [
+        -51.099523,
+        47.31612,
+        14.627908
+      ],
+      "ra": 137.2015437,
+      "dec": 11.8622503,
+      "syDistPc": 21.8182,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "KOBE-1",
+      "name": "KOBE-1",
+      "pos": [
+        66.751035,
+        23.200814,
+        33.451496
+      ],
+      "ra": 19.1660378,
+      "dec": 25.3310358,
+      "syDistPc": 23.9718,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Kapteyn",
+      "name": "Kapteyn",
+      "pos": [
+        1.890882,
+        8.864448,
+        -9.077498
+      ],
+      "ra": 77.9586613,
+      "dec": -45.0430198,
+      "syDistPc": 3.93305,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "L 168-9",
+      "name": "L 168-9",
+      "pos": [
+        40.313685,
+        -7.087649,
+        -71.08449
+      ],
+      "ra": 350.0285917,
+      "dec": -60.0657292,
+      "syDistPc": 25.1496,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "L 363-38",
+      "name": "L 363-38",
+      "pos": [
+        24.618538,
+        4.720976,
+        -22.018346
+      ],
+      "ra": 10.8555443,
+      "dec": -41.2952926,
+      "syDistPc": 10.2295,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "L 98-59",
+      "name": "L 98-59",
+      "pos": [
+        -7.255123,
+        10.543311,
+        -32.184529
+      ],
+      "ra": 124.5328604,
+      "dec": -68.3144658,
+      "syDistPc": 10.6194,
+      "planetCount": 5,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "LHS 1140",
+      "name": "LHS 1140",
+      "pos": [
+        46.245793,
+        9.197712,
+        -12.876313
+      ],
+      "ra": 11.248632,
+      "dec": -15.2741085,
+      "syDistPc": 14.9861,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "LHS 1478",
+      "name": "LHS 1478",
+      "pos": [
+        9.889021,
+        9.663399,
+        57.820287
+      ],
+      "ra": 44.3388743,
+      "dec": 76.5514045,
+      "syDistPc": 18.2276,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "LHS 1678",
+      "name": "LHS 1678",
+      "pos": [
+        18.517586,
+        46.24807,
+        -41.492949
+      ],
+      "ra": 68.1789866,
+      "dec": -39.7908744,
+      "syDistPc": 19.8782,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "LHS 1815",
+      "name": "LHS 1815",
+      "pos": [
+        -1.053734,
+        55.383483,
+        -80.032812
+      ],
+      "ra": 91.0899861,
+      "dec": -55.3115376,
+      "syDistPc": 29.8424,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "LHS 3154",
+      "name": "LHS 3154",
+      "pos": [
+        -18.456106,
+        -34.186218,
+        33.661055
+      ],
+      "ra": 241.6367309,
+      "dec": 40.9068221,
+      "syDistPc": 15.7606,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "LHS 3844",
+      "name": "LHS 3844",
+      "pos": [
+        16.271019,
+        -5.763083,
+        -45.374652
+      ],
+      "ra": 340.4962038,
+      "dec": -69.1721081,
+      "syDistPc": 14.8846,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "LHS 475",
+      "name": "LHS 475",
+      "pos": [
+        1.8235,
+        -4.946018,
+        -40.366135
+      ],
+      "ra": 290.2379403,
+      "dec": -82.5597883,
+      "syDistPc": 12.4814,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "LSPM J2116+0234",
+      "name": "LSPM J2116+0234",
+      "pos": [
+        43.42747,
+        -37.598488,
+        2.589112
+      ],
+      "ra": 319.1147513,
+      "dec": 2.5807711,
+      "syDistPc": 17.6297,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "LTT 1445 A",
+      "name": "LTT 1445 A",
+      "pos": [
+        15.059582,
+        15.30468,
+        -6.398679
+      ],
+      "ra": 45.4624781,
+      "dec": -16.5944956,
+      "syDistPc": 6.86929,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "LTT 3780",
+      "name": "LTT 3780",
+      "pos": [
+        -63.437376,
+        30.061377,
+        -14.56039
+      ],
+      "ra": 154.6449033,
+      "dec": -11.717801,
+      "syDistPc": 21.9814,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Proxima Cen",
+      "name": "Proxima Cen",
+      "pos": [
+        -1.547684,
+        -1.183014,
+        -3.770406
+      ],
+      "ra": 217.3934657,
+      "dec": -62.6761821,
+      "syDistPc": 1.30119,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "RR Cae",
+      "name": "RR Cae",
+      "pos": [
+        19.09878,
+        41.472951,
+        -51.889256
+      ],
+      "ra": 65.2733756,
+      "dec": -48.6542601,
+      "syDistPc": 21.1916,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Ross 128",
+      "name": "Ross 128",
+      "pos": [
+        -10.98949,
+        0.587936,
+        0.153535
+      ],
+      "ra": 176.9376036,
+      "dec": 0.7992898,
+      "syDistPc": 3.37454,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Ross 458",
+      "name": "Ross 458",
+      "pos": [
+        -35.385136,
+        -9.608103,
+        8.045258
+      ],
+      "ra": 195.1912147,
+      "dec": 12.3755996,
+      "syDistPc": 11.5094,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Ross 508",
+      "name": "Ross 508",
+      "pos": [
+        -21.968004,
+        -27.090793,
+        10.970717
+      ],
+      "ra": 230.9613022,
+      "dec": 17.4605347,
+      "syDistPc": 11.2103,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-1080",
+      "name": "TOI-1080",
+      "pos": [
+        5.665391,
+        -50.761418,
+        -65.882139
+      ],
+      "ra": 276.3683249,
+      "dec": -52.214573,
+      "syDistPc": 25.559,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-1224",
+      "name": "TOI-1224",
+      "pos": [
+        15.340731,
+        11.643335,
+        -120.225318
+      ],
+      "ra": 37.1978356,
+      "dec": -80.8991053,
+      "syDistPc": 37.3312,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-1450 A",
+      "name": "TOI-1450 A",
+      "pos": [
+        10.904949,
+        -35.996148,
+        62.811307
+      ],
+      "ra": 286.8540627,
+      "dec": 59.0866254,
+      "syDistPc": 22.4467,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-1468",
+      "name": "TOI-1468",
+      "pos": [
+        72.994961,
+        21.835497,
+        26.56964
+      ],
+      "ra": 16.6538724,
+      "dec": 19.2249195,
+      "syDistPc": 24.7399,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-198",
+      "name": "TOI-198",
+      "pos": [
+        68.821181,
+        2.729867,
+        -35.278264
+      ],
+      "ra": 2.2715087,
+      "dec": -27.1217452,
+      "syDistPc": 23.7262,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-2018",
+      "name": "TOI-2018",
+      "pos": [
+        -51.403119,
+        -60.908069,
+        44.557147
+      ],
+      "ra": 229.8374423,
+      "dec": 29.2078771,
+      "syDistPc": 27.9956,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-2134",
+      "name": "TOI-2134",
+      "pos": [
+        1.934483,
+        -57.243852,
+        46.502452
+      ],
+      "ra": 271.9355015,
+      "dec": 39.0729269,
+      "syDistPc": 22.6202,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-2194",
+      "name": "TOI-2194",
+      "pos": [
+        26.562701,
+        -47.613518,
+        -33.195631
+      ],
+      "ra": 299.1563393,
+      "dec": -31.3351812,
+      "syDistPc": 19.5711,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-2267 A",
+      "name": "TOI-2267 A",
+      "pos": [
+        2.756282,
+        5.927467,
+        73.257184
+      ],
+      "ra": 65.0614963,
+      "dec": 84.9008238,
+      "syDistPc": 22.55,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-2267 B",
+      "name": "TOI-2267 B",
+      "pos": [
+        2.756281,
+        5.927465,
+        73.257185
+      ],
+      "ra": 65.0615,
+      "dec": 84.900825,
+      "syDistPc": 22.55,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-2427",
+      "name": "TOI-2427",
+      "pos": [
+        48.572726,
+        62.827024,
+        -48.403747
+      ],
+      "ra": 52.2917315,
+      "dec": -31.3628665,
+      "syDistPc": 28.5147,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-244",
+      "name": "TOI-244",
+      "pos": [
+        56.628151,
+        10.566733,
+        -42.965997
+      ],
+      "ra": 10.5697537,
+      "dec": -36.7179743,
+      "syDistPc": 22.0337,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-2540",
+      "name": "TOI-2540",
+      "pos": [
+        5.942587,
+        45.497645,
+        -42.337578
+      ],
+      "ra": 82.5585484,
+      "dec": -42.6979461,
+      "syDistPc": 19.1419,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-260",
+      "name": "TOI-260",
+      "pos": [
+        64.617012,
+        5.395399,
+        -11.393877
+      ],
+      "ra": 4.7730178,
+      "dec": -9.9661505,
+      "syDistPc": 20.1852,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-270",
+      "name": "TOI-270",
+      "pos": [
+        16.620745,
+        42.013656,
+        -57.741531
+      ],
+      "ra": 68.4160804,
+      "dec": -51.9573937,
+      "syDistPc": 22.4793,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-406",
+      "name": "TOI-406",
+      "pos": [
+        48.940145,
+        56.823185,
+        -68.105246
+      ],
+      "ra": 49.2626428,
+      "dec": -42.2441492,
+      "syDistPc": 31.0597,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-4324",
+      "name": "TOI-4324",
+      "pos": [
+        -43.316161,
+        29.607617,
+        -18.307986
+      ],
+      "ra": 145.6464731,
+      "dec": -19.2356989,
+      "syDistPc": 17.038,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-4336 A",
+      "name": "TOI-4336 A",
+      "pos": [
+        -50.332075,
+        -24.665068,
+        -47.597321
+      ],
+      "ra": 206.1070129,
+      "dec": -40.3373505,
+      "syDistPc": 22.5455,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-4527",
+      "name": "TOI-4527",
+      "pos": [
+        55.415483,
+        19.59346,
+        5.6298
+      ],
+      "ra": 19.4722574,
+      "dec": 5.4711996,
+      "syDistPc": 18.1037,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-4552",
+      "name": "TOI-4552",
+      "pos": [
+        -5.520772,
+        -59.67354,
+        -65.715226
+      ],
+      "ra": 264.7142556,
+      "dec": -47.6370457,
+      "syDistPc": 27.2684,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-5388",
+      "name": "TOI-5388",
+      "pos": [
+        -43.471058,
+        22.942463,
+        35.12261
+      ],
+      "ra": 152.1765169,
+      "dec": 35.5475571,
+      "syDistPc": 18.5226,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-540",
+      "name": "TOI-540",
+      "pos": [
+        7.241164,
+        29.726307,
+        -33.905398
+      ],
+      "ra": 76.3096949,
+      "dec": -47.9375391,
+      "syDistPc": 14.0022,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-5789",
+      "name": "TOI-5789",
+      "pos": [
+        34.687328,
+        -53.879017,
+        18.604289
+      ],
+      "ra": 302.7734475,
+      "dec": 16.1897138,
+      "syDistPc": 20.4581,
+      "planetCount": 4,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-5961",
+      "name": "TOI-5961",
+      "pos": [
+        83.699316,
+        -15.94221,
+        8.498317
+      ],
+      "ra": 349.2160437,
+      "dec": 5.6958866,
+      "syDistPc": 26.2533,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-6008",
+      "name": "TOI-6008",
+      "pos": [
+        31.650402,
+        -37.125072,
+        57.417852
+      ],
+      "ra": 310.4487344,
+      "dec": 49.6468992,
+      "syDistPc": 23.1008,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-6255",
+      "name": "TOI-6255",
+      "pos": [
+        45.066011,
+        -24.465629,
+        41.969436
+      ],
+      "ra": 331.5031606,
+      "dec": 39.2988284,
+      "syDistPc": 20.3167,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-6324",
+      "name": "TOI-6324",
+      "pos": [
+        22.399597,
+        -12.495868,
+        61.918943
+      ],
+      "ra": 330.844543,
+      "dec": 67.4986773,
+      "syDistPc": 20.5488,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-6662",
+      "name": "TOI-6662",
+      "pos": [
+        1.62746,
+        18.07853,
+        66.659244
+      ],
+      "ra": 84.8560007,
+      "dec": 74.7674107,
+      "syDistPc": 21.182,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-6716",
+      "name": "TOI-6716",
+      "pos": [
+        -19.578027,
+        49.304882,
+        -31.313772
+      ],
+      "ra": 111.657082,
+      "dec": -30.5521801,
+      "syDistPc": 18.8873,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-700",
+      "name": "TOI-700",
+      "pos": [
+        -5.184849,
+        41.65184,
+        -92.437915
+      ],
+      "ra": 97.0957165,
+      "dec": -65.5786149,
+      "syDistPc": 31.1265,
+      "planetCount": 4,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-771",
+      "name": "TOI-771",
+      "pos": [
+        -23.20456,
+        6.603911,
+        -78.839574
+      ],
+      "ra": 164.1138903,
+      "dec": -72.9851736,
+      "syDistPc": 25.2788,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-776",
+      "name": "TOI-776",
+      "pos": [
+        -70.2327,
+        1.743438,
+        -54.012068
+      ],
+      "ra": 178.577997,
+      "dec": -37.5533568,
+      "syDistPc": 27.1701,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-836",
+      "name": "TOI-836",
+      "pos": [
+        -57.657534,
+        -57.818534,
+        -37.133073
+      ],
+      "ra": 225.0798831,
+      "dec": -24.4542022,
+      "syDistPc": 27.5024,
+      "planetCount": 2,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TOI-912",
+      "name": "TOI-912",
+      "pos": [
+        -9.184644,
+        -10.688909,
+        -83.975965
+      ],
+      "ra": 229.3285665,
+      "dec": -80.4733446,
+      "syDistPc": 26.1072,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TRAPPIST-1",
+      "name": "TRAPPIST-1",
+      "pos": [
+        39.288803,
+        -9.340791,
+        -3.564004
+      ],
+      "ra": 346.6263919,
+      "dec": -5.0434618,
+      "syDistPc": 12.42988881,
+      "planetCount": 7,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "TYC 2187-512-1",
+      "name": "TYC 2187-512-1",
+      "pos": [
+        35.880386,
+        -29.549455,
+        19.665286
+      ],
+      "ra": 320.5266829,
+      "dec": 22.9319351,
+      "syDistPc": 15.4744,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Teegarden's Star",
+      "name": "Teegarden's Star",
+      "pos": [
+        8.706372,
+        8.195622,
+        3.624806
+      ],
+      "ra": 43.2691449,
+      "dec": 16.8649024,
+      "syDistPc": 3.83078,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "VHS J125601.92-125723.9",
+      "name": "VHS J125601.92-125723.9",
+      "pos": [
+        -39.166748,
+        -9.771876,
+        -9.286916
+      ],
+      "ra": 194.008964,
+      "dec": -12.956031,
+      "syDistPc": 12.7,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "WD 0806-661",
+      "name": "WD 0806-661",
+      "pos": [
+        -13.264342,
+        21.453705,
+        -57.475836
+      ],
+      "ra": 121.7275683,
+      "dec": -66.3058835,
+      "syDistPc": 19.2444,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "WD 1856+534",
+      "name": "WD 1856+534",
+      "pos": [
+        11.944538,
+        -46.468122,
+        64.860893
+      ],
+      "ra": 284.415675,
+      "dec": 53.5090244,
+      "syDistPc": 24.7359,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "WISEP J121756.91+162640.2 A",
+      "name": "WISEP J121756.91+162640.2 A",
+      "pos": [
+        -31.497452,
+        -2.471782,
+        9.325375
+      ],
+      "ra": 184.487125,
+      "dec": 16.4445,
+      "syDistPc": 10.1,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Wolf 1061",
+      "name": "Wolf 1061",
+      "pos": [
+        -5.227059,
+        -12.665999,
+        -3.0798
+      ],
+      "ra": 247.5748276,
+      "dec": -12.6676866,
+      "syDistPc": 4.30592,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Wolf 1069",
+      "name": "Wolf 1069",
+      "pos": [
+        9.699159,
+        -13.096067,
+        26.672333
+      ],
+      "ra": 306.5242477,
+      "dec": 58.5753044,
+      "syDistPc": 9.58341,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "Wolf 327",
+      "name": "Wolf 327",
+      "pos": [
+        -64.455942,
+        39.687188,
+        54.133033
+      ],
+      "ra": 148.3783199,
+      "dec": 35.570548,
+      "syDistPc": 28.5321,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "YZ Cet",
+      "name": "YZ Cet",
+      "pos": [
+        11.003335,
+        3.603477,
+        -3.53903
+      ],
+      "ra": 18.1330792,
+      "dec": -16.9962434,
+      "syDistPc": 3.71207,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "alf Ari",
+      "name": "alf Ari",
+      "pos": [
+        51.394121,
+        31.857368,
+        26.244619
+      ],
+      "ra": 31.793286,
+      "dec": 23.462421,
+      "syDistPc": 20.21019,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "alf Tau",
+      "name": "alf Tau",
+      "pos": [
+        22.919176,
+        59.644799,
+        18.938232
+      ],
+      "ra": 68.980174,
+      "dec": 16.509201,
+      "syDistPc": 20.4332,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "bet Pic",
+      "name": "bet Pic",
+      "pos": [
+        2.244039,
+        40.406254,
+        -50.092598
+      ],
+      "ra": 86.8212337,
+      "dec": -51.066148,
+      "syDistPc": 19.7442,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "eps Eri",
+      "name": "eps Eri",
+      "pos": [
+        6.167937,
+        8.253386,
+        -1.716481
+      ],
+      "ra": 53.2284306,
+      "dec": -9.4581715,
+      "syDistPc": 3.2026,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "eps Ind A",
+      "name": "eps Ind A",
+      "pos": [
+        5.676809,
+        -3.163384,
+        -9.929889
+      ],
+      "ra": 330.8714021,
+      "dec": -56.7969023,
+      "syDistPc": 3.63857,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "gam Cep",
+      "name": "gam Cep",
+      "pos": [
+        9.810999,
+        -0.886686,
+        44.928597
+      ],
+      "ra": 354.8358233,
+      "dec": 77.6331009,
+      "syDistPc": 14.1024,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "mu Leo",
+      "name": "mu Leo",
+      "pos": [
+        -81.22752,
+        50.383086,
+        46.633462
+      ],
+      "ra": 148.1898673,
+      "dec": 26.0067142,
+      "syDistPc": 32.6081,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "nu Oct A",
+      "name": "nu Oct A",
+      "pos": [
+        12.419952,
+        -8.577463,
+        -67.477247
+      ],
+      "ra": 325.3702792,
+      "dec": -77.3910853,
+      "syDistPc": 21.1999,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "psi1 Dra B",
+      "name": "psi1 Dra B",
+      "pos": [
+        -1.78444,
+        -22.635962,
+        70.534129
+      ],
+      "ra": 265.4925754,
+      "dec": 72.1557114,
+      "syDistPc": 22.7188,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "rho CrB",
+      "name": "rho CrB",
+      "pos": [
+        -23.620531,
+        -41.344213,
+        31.278018
+      ],
+      "ra": 240.2600639,
+      "dec": 33.3001861,
+      "syDistPc": 17.4671,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "tau Boo",
+      "name": "tau Boo",
+      "pos": [
+        -43.462896,
+        -21.967505,
+        15.314724
+      ],
+      "ra": 206.8134593,
+      "dec": 17.4571647,
+      "syDistPc": 15.6521,
+      "planetCount": 1,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "tau Cet",
+      "name": "tau Cet",
+      "pos": [
+        10.155609,
+        4.955263,
+        -3.22611
+      ],
+      "ra": 26.0093029,
+      "dec": -15.9337987,
+      "syDistPc": 3.60304,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    },
+    {
+      "id": "ups And",
+      "name": "ups And",
+      "pos": [
+        29.913235,
+        13.442507,
+        28.916436
+      ],
+      "ra": 24.1983534,
+      "dec": 41.4038147,
+      "syDistPc": 13.4054,
+      "planetCount": 3,
+      "kind": "host",
+      "datasetId": "pscomppars-2026-11-05"
+    }
+  ]
+}

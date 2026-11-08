@@ -18,12 +18,15 @@ htmlcov/
 data/processed/*
 !data/processed/.gitkeep
 
-# 웹 데모 (나중에 node/bundler 쓰면)
+# 웹 데모 (Vite + TypeScript)
 node_modules/
 dist/
+dist-ssr/
 build/
+.vite/
 .cache/
 *.local
+*.tsbuildinfo
 .turbo/
 .next/
 coverage/

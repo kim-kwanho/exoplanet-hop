@@ -30,7 +30,7 @@ exoplanet-hop/
   data/
     raw/                  # 원본 CSV 스냅샷
     processed/            # 재생성 가능 산출물 (git 무시)
-  web-demo/               # 선택 확장: 교육용 3D 데모
+  web-demo/               # 선택 확장: EXOPLANET HOP 3D 웹 앱
 ```
 
 재현: 저장소 루트에서 `python scripts/analyze_catalog.py`
