@@ -1,0 +1,10 @@
+{
+  // Cloudflare Workers Static Assets — deploy the Vite build output globally.
+  // Docs: https://developers.cloudflare.com/workers/static-assets/
+  "name": "exoplanet-hop-web",
+  "compatibility_date": "2026-11-09",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}

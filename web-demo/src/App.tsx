@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { AboutModal } from './ui/AboutModal'
 import { PlaybackControls } from './ui/PlaybackControls'
 import { IconRail } from './ui/IconRail'
-import { InspectorPanel } from './ui/InspectorPanel'
 import { Intro } from './ui/Intro'
 import { ScenarioPanel } from './ui/ScenarioPanel'
 import { TopBar } from './ui/TopBar'
@@ -38,7 +37,6 @@ export function App() {
       <SpaceCanvas />
       <TopBar />
       <ScenarioPanel />
-      <InspectorPanel />
       <IconRail />
       <PlaybackControls />
       <footer className="foot">

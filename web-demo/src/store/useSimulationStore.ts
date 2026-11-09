@@ -5,6 +5,7 @@ import hosts from '../data/exoplanet-hosts.json'
 import synthetic from '../data/synthetic-stars.json'
 
 export type DatasetId = 'hosts' | 'sandbox'
+export type ShipSkin = 'classic' | 'snoopy' | 'pat'
 
 type DatasetFile = {
   metadata: {
@@ -51,12 +52,16 @@ type Store = {
   layersOpen: boolean
   scenarioOpen: boolean
   resetCam: number
+  focusCam: number
+  camZoomed: boolean
   flightNonce: number
+  shipSkin: ShipSkin
   setDataset: (id: DatasetId) => void
   setX: (n: number) => void
   setSpeed: (n: number) => void
   setStop: (n: number) => void
   setDest: (id: string) => void
+  setShipSkin: (skin: ShipSkin) => void
   step: (d: number) => void
   toStart: () => void
   toEnd: () => void
@@ -65,6 +70,8 @@ type Store = {
   toggleAbout: () => void
   start: () => void
   requestReset: () => void
+  requestFocus: () => void
+  markCamZoomed: () => void
   replayFlight: () => void
   toggleScenario: () => void
   toggleLayers: () => void
@@ -100,6 +107,21 @@ function run(bodies: Body[], X: number, speedC: number, stopYr: number, destId: 
   return simulate(bodies, { X, speedC, stopYr, startId: 'earth_sol', destId })
 }
 
+const HIDE_HOW_KEY = 'exo-hop-hide-how'
+
+function todayKey() {
+  const d = new Date()
+  return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`
+}
+
+export function hideHowToday() {
+  localStorage.setItem(HIDE_HOW_KEY, todayKey())
+}
+
+function howHiddenToday() {
+  return localStorage.getItem(HIDE_HOW_KEY) === todayKey()
+}
+
 export const useSimulationStore = create<Store>((set, get) => ({
   ...initial,
   index: 0,
@@ -114,8 +136,12 @@ export const useSimulationStore = create<Store>((set, get) => ({
   layersOpen: false,
   scenarioOpen: true,
   resetCam: 0,
+  focusCam: 0,
+  camZoomed: false,
   flightNonce: 0,
-  setDataset: (id) => set({ ...load(id), flightNonce: get().flightNonce + 1 }),
+  shipSkin: 'classic',
+  setDataset: (id) => set({ ...load(id), flightNonce: get().flightNonce + 1, camZoomed: false }),
+  setShipSkin: (shipSkin) => set({ shipSkin }),
   setX: (X) => {
     const s = get()
     set({ X, events: run(s.bodies, X, s.speedC, s.stopYr, s.destId), index: 0, playing: false })
@@ -137,7 +163,7 @@ export const useSimulationStore = create<Store>((set, get) => ({
     const index = Math.max(0, Math.min(s.events.length - 1, s.index + d))
     set({ index, playing: index >= s.events.length - 1 ? false : s.playing })
   },
-  toStart: () => set({ index: 0, playing: false }),
+  toStart: () => set({ index: 0, playing: false, resetCam: get().resetCam + 1 }),
   toEnd: () => set({ index: get().events.length - 1, playing: false }),
   togglePlay: () => {
     const s = get()
@@ -146,8 +172,12 @@ export const useSimulationStore = create<Store>((set, get) => ({
   },
   cycleRate: () => set({ rate: get().rate === 1 ? 2 : get().rate === 2 ? 4 : 1 }),
   toggleAbout: () => set({ about: !get().about }),
-  start: () => set({ intro: false }),
-  requestReset: () => set({ resetCam: get().resetCam + 1 }),
+  start: () => set({ intro: false, about: !howHiddenToday() }),
+  requestReset: () => set({ resetCam: get().resetCam + 1, camZoomed: false }),
+  requestFocus: () => set({ focusCam: get().focusCam + 1, camZoomed: false }),
+  markCamZoomed: () => {
+    if (!get().camZoomed) set({ camZoomed: true })
+  },
   replayFlight: () => set({ flightNonce: get().flightNonce + 1 }),
   toggleScenario: () => set({ scenarioOpen: !get().scenarioOpen }),
   toggleLayers: () => set({ layersOpen: !get().layersOpen }),
