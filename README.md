@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.svg" alt="EXOPLANET HOP" width="640">
+  <img src="assets/logo.png" alt="EXOPLANET HOP" width="640">
 </p>
 
 <p align="center">
