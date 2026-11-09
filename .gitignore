@@ -24,6 +24,7 @@ dist/
 dist-ssr/
 build/
 .vite/
+.wrangler/
 .cache/
 *.local
 *.tsbuildinfo
@@ -52,16 +53,12 @@ desktop.ini
 *.log
 *.orig
 
-# 로컬 PDF·한글 초안 (제출본을 올릴 때만 예외로 add)
-report/*.pdf
+# 보고서·제출 PDF는 로컬에만 둔다
+report/
 *.hwpx
 *.hwp
 
-# AI 도구가 내보낸 임시/원본 이미지 (확정 다이어그램은 report/diagrams/ 추적)
-report/_scratch/
-report/Gemini_Generated_*
-report/**/Gemini_Generated_*
-report/*_generated_*
+# AI 도구가 내보낸 임시/원본 이미지
 *.psd
 *.ai
 

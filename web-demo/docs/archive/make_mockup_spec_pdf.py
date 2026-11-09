@@ -7,8 +7,8 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 
-base = Path(__file__).resolve().parents[1]
-out = base / "docs" / "web-demo-mockup-spec-1page.pdf"
+base = Path(__file__).resolve().parent
+out = base / "web-demo-mockup-spec-1page.pdf"
 out.parent.mkdir(parents=True, exist_ok=True)
 
 pdfmetrics.registerFont(TTFont("Malgun", r"C:\Windows\Fonts\malgun.ttf"))
@@ -31,8 +31,8 @@ c.setFont("Malgun", 8)
 c.setFillColorRGB(0.65, 0.75, 0.85)
 c.drawRightString(W - 10 * mm, H - 7.5 * mm, "exoplanet-hop/web-demo  ·  v3  ·  2026-11-08")
 
-img1_path = base / "docs" / "mockups" / "v3" / "web-demo-v3-ready.jpg"
-img2_path = base / "docs" / "mockups" / "v3" / "web-demo-v3-query.jpg"
+img1_path = base / "mockups" / "v3" / "web-demo-v3-ready.jpg"
+img2_path = base / "mockups" / "v3" / "web-demo-v3-query.jpg"
 
 img1 = ImageReader(str(img1_path))
 img2 = ImageReader(str(img2_path))
@@ -139,7 +139,7 @@ c.setFont("Malgun", 6.2)
 c.drawString(
     8 * mm,
     3.2 * mm,
-    "참고: docs/mockups/v3 · docs/prebuild-handoff.md · 3D모션=Eyes UX/Sketchfab 인트로 · 배지=데이터 필",
+    "참고: docs/archive/mockups/v3 · docs/archive/prebuild-handoff.md · 3D모션=Eyes UX/Sketchfab 인트로 · 배지=데이터 필",
 )
 
 c.showPage()
