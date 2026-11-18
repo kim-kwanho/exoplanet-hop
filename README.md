@@ -22,9 +22,9 @@
   <img src="https://img.shields.io/badge/data-NASA_pscomppars_2026--11--05-0b3d91" alt="NASA pscomppars 2026-11-05">
 </p>
 
-<p align="center">
-  <img src="assets/web-ready.png" alt="탐색 대기 화면. 지구와 목적지 Dest-A 사이에 직선거리 안내선이 있다." width="880">
-</p>
+<!-- TODO: assets/demo.gif 녹화 후 교체 권장 -->
+
+![탐색 대기 화면. 지구와 목적지 Dest-A 사이에 직선거리 안내선이 있다.](assets/web-ready.png)
 
 <p align="center"><sub>Live 기본 화면 · 합성 항성 100개 · 도약 8광년 · 목적지 Dest-A</sub></p>
 
@@ -101,7 +101,12 @@ flowchart LR
   R --> H
 ```
 
+<details>
+<summary>좌표 변환</summary>
+
 좌표는 `ra`, `dec`, `sy_dist`입니다. `sy_dist`는 파섹이라 `1 pc = 3.2615637771674333 ly`로 바꾼 뒤 직교좌표로 놓습니다. 같은 `hostname`의 좌표가 어긋나면 평균 내지 않고 멈춥니다. 이번 추출본에서는 0건입니다.
+
+</details>
 
 실행 시간으로 두 알고리즘의 우열을 단정하지 않습니다. 식과 15광년 규모 대입은 [notes/complexity.md](notes/complexity.md)에 있습니다. 웹의 k-d 구축은 재귀마다 정렬하므로 `Θ(N log² N)`이고, 선형 시간 선택으로 트리를 만드는 의사코드의 `Θ(N log N)`과 같은 측정이 아닙니다.
 
@@ -135,12 +140,22 @@ flowchart LR
 
 순항은 약 1,498.533년이고 기착 11년을 더했습니다. 경로가 직선보다 긴 이유는 한 도약이 15광년을 넘을 수 없기 때문입니다.
 
+<details>
+<summary>경유지 12곳</summary>
+
 ```text
 Earth → Ross 128 → GJ 393 → GJ 357 → GJ 367 → L 98-59 → COCONUTS-2 A
       → LHS 475 → HD 222237 → LHS 3844 → GJ 3021 → nu Oct A → HD 199509
 ```
 
+</details>
+
 샌드박스에서 보이는 시간(예: 507.6년)은 합성 데이터 결과입니다. 1,509.533년과 같은 측정이 아닙니다.
+
+## 설계 의도 (Architecture Decisions)
+
+- **지연 이웃 탐색과 k-d 트리.** 호스트 쌍을 모두 잇는 간선 수는 `N(N−1)/2`이고, 이번 추출본에서는 `4,819×4,818/2 = 11,608,971`이다. 그 목록을 미리 두면 거리 계산과 저장이 쌍의 수에 묶이므로, 좌표와 k-d 트리만 `O(N)`으로 두고 다익스트라가 별을 확정할 때마다 반경 X 안의 후보만 질의한다. 질의는 가상 지구에서 1회, 확정 호스트에서 최대 1회라 상한이 `N+1`이고, 질의가 빠짐없으면 전체 간선을 먼저 둔 최단 경로와 같다.
+- **React Three Fiber와 Zustand.** 탐색은 한 번 계산해 확정 노드, 반경 질의, 우선순위 큐 스냅샷이 들어 있는 이벤트 열로 남기고, Zustand가 그 열과 재생 인덱스를 캔버스 밖에서 보유한다. 3D 화면은 현재 인덱스의 상태만 구독해 확정 노드, 반경 구, 큐를 그리며, 카메라 운동은 React Three Fiber의 프레임 루프에 둔다. 단계가 바뀌어도 알고리즘을 다시 풀지 않으므로 단계 재생과 60fps 렌더가 분리된다.
 
 ## 구성
 
@@ -202,3 +217,7 @@ exoplanet-hop/
 - Bentley, Jon Louis. “Multidimensional Binary Search Trees Used for Associative Searching.” *Communications of the ACM* 18, no. 9 (1975): 509–517. [DOI: 10.1145/361002.361007](https://doi.org/10.1145/361002.361007).
 - International Astronomical Union. “Resolution B2 (2012).” [PDF](https://www.iau.org/static/resolutions/IAU2012_English.pdf). 천문 단위.
 - International Astronomical Union. “Resolution B2 (2015).” [PDF](https://www.iau.org/static/resolutions/IAU2015_English.pdf). 파섹은 648000/π au.
+
+## 라이선스 (License)
+
+루트에 `LICENSE` 파일은 없다. 이 저장소의 소스 코드와 문서는 MIT License를 기준으로 하며, 사본에는 저작권 고지와 허가 고지를 남긴다. NASA Exoplanet Archive `pscomppars` 추출본은 이 라이선스의 대상이 아니며, 출처는 위의 참고를 따른다.
